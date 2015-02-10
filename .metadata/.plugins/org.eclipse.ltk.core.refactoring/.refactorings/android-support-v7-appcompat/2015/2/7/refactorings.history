@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;android.support.v7.appcompat&apos; to &apos;adapterFrameWork/gen&apos;&#x0D;&#x0A;- Original project: &apos;android-support-v7-appcompat&apos;&#x0D;&#x0A;- Destination element: &apos;adapterFrameWork/gen&apos;&#x0D;&#x0A;- Original element: &apos;android-support-v7-appcompat/gen/android.support.v7.appcompat&apos;" description="Copy package" destination="=adapterFrameWork/gen" element1="/gen&lt;android.support.v7.appcompat" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1423399543089" version="1.0"/>
+</session>

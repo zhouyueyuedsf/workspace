@@ -1,0 +1,6 @@
+package javaInterface_Abstract;
+
+public interface  ISignUpListener {
+	void onSignUpSuccess();
+	void onSignUpFailure(String msg);
+}

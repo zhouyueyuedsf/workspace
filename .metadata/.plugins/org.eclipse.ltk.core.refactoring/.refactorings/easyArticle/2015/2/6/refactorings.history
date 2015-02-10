@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename source module &apos;rticle.add.handle.php&apos; to &apos;article.add.handle.php&apos;&#x0D;&#x0A;- Original element: &apos;(default package)\rticle.add.handle.php&apos;&#x0D;&#x0A;- Renamed element: &apos;(default package)\article.add.handle.php&apos;" description="Rename source module &apos;rticle.add.handle.php&apos;" flags="589830" id="org.eclipse.dltk.ui.rename.sourcemodule" input="/&lt;{rticle.add.handle.php" name="article.add.handle.php" stamp="1422867730046" version="1.0"/>
+</session>

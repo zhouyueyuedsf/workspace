@@ -1,0 +1,565 @@
+!SESSION 2015-02-10 20:19:40.092 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.php.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.php.product
+
+This is a continuation of log file D:\eclipse\workspace\.metadata\.bak_3.log
+Created Time: 2015-02-10 20:36:02.635
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.635
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.635
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.651
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.651
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.651
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.651
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.651
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.666
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.666
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.666
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.666
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY org.eclipse.dltk.core.index.sql 4 0 2015-02-10 20:36:02.666
+!MESSAGE An exception is thrown while searching elements
+!STACK 0
+org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "D:/eclipse/workspace/.metadata/.plugins/org.eclipse.dltk.core.index.sql.h2/model.h2.db"; SQL statement:
+SELECT * FROM FILES WHERE ID=?; [90031-168]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1285)
+	at org.h2.store.PageStore.getPage(PageStore.java:735)
+	at org.h2.index.PageDataIndex.getPage(PageDataIndex.java:226)
+	at org.h2.index.PageDataNode.find(PageDataNode.java:164)
+	at org.h2.index.PageDataIndex.find(PageDataIndex.java:289)
+	at org.h2.index.PageDelegateIndex.find(PageDelegateIndex.java:61)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:86)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2FileDao.selectById(H2FileDao.java:137)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine$ElementHandler.handle(SqlSearchEngine.java:193)
+	at org.eclipse.dltk.internal.core.index.sql.h2.H2ElementDao.search(H2ElementDao.java:204)
+	at org.eclipse.dltk.internal.core.index.sql.SqlSearchEngine.search(SqlSearchEngine.java:146)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:285)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findElements(ModelAccess.java:263)
+	at org.eclipse.dltk.core.index2.search.ModelAccess.findFields(ModelAccess.java:70)
+	at org.eclipse.php.internal.core.model.PhpModelAccess.findFields(PhpModelAccess.java:40)
+	at org.eclipse.php.internal.core.PHPCorePlugin.initializeAfterLoad(PHPCorePlugin.java:427)
+	at org.eclipse.php.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:29)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 28 more
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-02-10 20:36:12.957
+!MESSAGE 
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/Bmob_Sample_lost_found/res' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:341)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:215)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:266)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:249)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$7.run(Sdk.java:1485)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2015-02-10 20:36:12.957
+!MESSAGE Resource '/Bmob_Sample_lost_found/res' does not exist.
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-02-10 21:11:49.420
+!MESSAGE An internal error occurred during: "Detecting library folders".
+!STACK 0
+java.lang.IllegalStateException: Preference node "org.eclipse.wst.validation" has been removed.
+	at org.eclipse.core.internal.preferences.EclipsePreferences.checkRemoved(EclipsePreferences.java:200)
+	at org.eclipse.core.internal.resources.ProjectPreferences.internalGet(ProjectPreferences.java:423)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.get(EclipsePreferences.java:484)
+	at org.eclipse.wst.validation.internal.PreferencesWrapper$PreferencesWrapperPersistent.get(PreferencesWrapper.java:114)
+	at org.eclipse.php.internal.core.libfolders.AutoDetectLibraryFolderJob.hasDisabledPreference(AutoDetectLibraryFolderJob.java:100)
+	at org.eclipse.php.internal.core.libfolders.AutoDetectLibraryFolderJob.runInWorkspace(AutoDetectLibraryFolderJob.java:66)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-02-10 21:28:57.479 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.php.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.php.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-02-10 21:29:00.480
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-10 21:29:20.573
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-10 21:29:20.575
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\zhouyueyuedsf'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

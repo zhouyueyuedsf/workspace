@@ -1,0 +1,7 @@
+package javaInterface_Abstract;
+
+
+public interface ILoginListener {
+	void onLoginSuccess();//定义了两个方法
+	void onLoginFailure(String msg);
+}

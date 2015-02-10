@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="appname">微信</string>
+    <string name="search">搜索</string>
+    <string name="add">添加</string>
+    
+    
+    <string name="group_chat">发起群聊</string>
+    <string name="add_friends">添加朋友</string>
+    <string name="scan">扫一扫</string>
+    <string name="feedback">反馈</string>
+
+</resources>

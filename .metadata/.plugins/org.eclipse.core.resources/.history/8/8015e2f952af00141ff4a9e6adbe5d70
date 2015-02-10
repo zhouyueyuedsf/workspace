@@ -1,0 +1,5 @@
+package com.example.activitylifetest;
+
+public interface TestInterface {
+
+}

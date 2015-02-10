@@ -1,0 +1,19 @@
+package javaInterface_Abstract;
+
+import com.xgr.wonderful.proxy.UserProxy.ISignUpListener;
+
+public class TestActivity {
+
+	public interface ILoginListener {
+		void onLoginSuccess();//定义了两个方法
+		void onLoginFailure(String msg);
+	}
+	private ISignUpListener signUpLister;
+	public void setOnSignUpListener(ISignUpListener signUpLister){
+		this.signUpLister = signUpLister;
+	}
+	public interface  ISignUpListener {
+		void onSignUpSuccess();
+		void onSignUpFailure(String msg);
+	}
+}

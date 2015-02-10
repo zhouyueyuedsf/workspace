@@ -1,0 +1,5 @@
+package javaInterface_Abstract;
+
+public abstract class BaseActivity {
+	
+}

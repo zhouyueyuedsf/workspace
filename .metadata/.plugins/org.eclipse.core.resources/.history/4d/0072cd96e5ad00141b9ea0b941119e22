@@ -1,0 +1,56 @@
+package com.example.sqlite;
+
+import com.example.andriodio.R;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class Dict extends Activity {
+	private EditText editText, editText2 ;
+	private Button button,button2;
+	private MyDataBaseHelper baseHelper;
+	int version=1;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		 setContentView(R.layout.dic);
+		 editText = (EditText)this.findViewById(R.id.wordedit);
+		 editText2 = (EditText)this.findViewById(R.id.detailedit);
+		 button = (Button)this.findViewById(R.id.insert);
+		 button2 = (Button)this.findViewById(R.id.search);
+		 baseHelper =new MyDataBaseHelper(this, "myDict.db3", null, version);
+		 button.setOnClickListener(new OnClickListener() {
+		
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+			String 	word = editText.getText().toString();
+			String 	detail = editText2.getText().toString();
+				if(!word.equals(null))
+				{
+					//插入数据库
+					String insertsql="insert into myDict(word,detail) values('word','detail')"; 
+					baseHelper.getReadableDatabase().execSQL(insertsql);//执行语句
+					Toast.makeText(this, "添加单词成功",8000).show();
+				}
+				else{
+					
+				}
+			}
+		});
+		 button2.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+
+}
