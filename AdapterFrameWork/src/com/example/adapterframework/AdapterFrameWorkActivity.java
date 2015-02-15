@@ -24,11 +24,11 @@ public class AdapterFrameWorkActivity extends ActionBarActivity {
 			@Override
 			protected void convert(BaseAdapterHelper helper, MixTure item) {
 				// TODO Auto-generated method stub
-				helper.setBackgroundRes(R.id.userLogo, R.drawable.ic_launcher)
-						.setText(R.id.userName, "zhouyueyue")
-						.setText(R.id.context, "我有点怀旧了")
-						.setText(R.id.zhuanfa, "转发")
-						.setText(R.id.pinglun, "评论").setText(R.id.zan, "赞");
+				helper.setBackgroundRes(R.id.portrait, R.drawable.ic_launcher)
+						.setText(R.id.birthName, "陈冲")
+						.setText(R.id.calendarFlag, "公历")
+						.setText(R.id.date, "02月13日")
+						.setText(R.id.apartDay, "明天");
 			}
 		};
 		adapter.add(null);

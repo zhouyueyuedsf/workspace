@@ -1,0 +1,11 @@
+package interfaceCallback;
+
+public class Printer {
+	ICallBack ic;
+	public void setCallBack(ICallBack ic){
+		
+	}
+	public void excute(){
+		ic.print();
+	}
+}

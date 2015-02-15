@@ -1,0 +1,12 @@
+package interfaceAdapter;
+
+public class Client {
+	public static void main(String[] args) {
+		AMDmainBorad main = new AMDmainBorad();
+		IntelToAMD toAMD = new IntelToAMD();
+		I7 cpu =new I7();
+		toAMD.setCpu(cpu);
+		main.setCpu(toAMD);
+		
+	}
+}

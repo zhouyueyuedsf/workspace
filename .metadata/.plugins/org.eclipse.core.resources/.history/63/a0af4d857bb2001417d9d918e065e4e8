@@ -1,0 +1,10 @@
+package factory;
+
+public class Tricycle implements Cycle {
+
+	public void go() {
+		// TODO Auto-generated method stub
+		System.out.print("我的时速最慢");
+	}
+
+}

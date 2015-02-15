@@ -12,11 +12,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\疯狂讲义源代码\codes\10\10.7\AlarmTest"/>
+			<item value="D:\eclipse\workspace\javaTest"/>
 			<item value="D:\eclipse\workspace\android-project\AdapterFrameWork"/>
 			<item value="D:\eclipse\workspace\android-project\activitylifeTest"/>
 			<item value="D:\eclipse\workspace\android-project\Bmob_Sample_lost_found"/>
-			<item value="D:\移动互联网开发\Bmob_Sample_lost_found"/>
-			<item value="D:\eclipse\workspace\android-project\appcompat_v7"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>

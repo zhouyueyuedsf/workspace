@@ -1,0 +1,88 @@
+package com.example.viewpager1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.PagerTabStrip;
+import android.support.v4.view.PagerTitleStrip;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageView;
+
+
+public class MainActivity extends Activity {
+	private View view,view2,view3;
+	private List<View> views;
+	private ViewPager viewPager;
+	private ImageView point1,point2,point3;
+	private int currPos = 0;
+//	private PagerTabStrip pagerTabStrip;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        viewPager = (ViewPager)this.findViewById(R.id.viewpager);
+//        pagerTabStrip=(PagerTabStrip) findViewById(R.id.pagertab); 
+//        pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.gold));  
+//        pagerTabStrip.setDrawFullUnderline(false); 
+//        pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.azure)); 
+//        pagerTabStrip.setTextSpacing(50); 
+        point1 = (ImageView)this.findViewById(R.id.point1);
+        point2 = (ImageView)this.findViewById(R.id.point2);
+        point3 = (ImageView)this.findViewById(R.id.point3);
+        LayoutInflater inflater = getLayoutInflater().from(this);
+        view = inflater.inflate(R.layout.splashactivity1, null);
+        view2 = inflater.inflate(R.layout.splashactivity2, null);
+        view3 = inflater.inflate(R.layout.splashactivity3, null);
+        views = new ArrayList<View>();// 将要分页显示的View装入数组中   
+        views.add(view);  
+        views.add(view2);  
+        views.add(view3);  
+        MyPagerAdapter adapter = new MyPagerAdapter(views);
+		viewPager.setAdapter(adapter);
+		viewPager.setCurrentItem(currPos);
+		viewPager.setOnPageChangeListener(new OnPageChangeListener() {
+			
+			@Override
+			public void onPageSelected(int arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+				// TODO Auto-generated method stub
+				if(arg0 == 2){
+				currPos	= viewPager.getCurrentItem();
+				setbg(currPos);
+				}
+			}
+
+			private void setbg(int currPos) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+    }
+
+
+
+}

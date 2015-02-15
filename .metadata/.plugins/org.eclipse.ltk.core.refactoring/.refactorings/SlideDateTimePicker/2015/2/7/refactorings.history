@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SlideDateTimePicker/res/raw/BOBO - 光荣.mp3&apos; to &apos;BOBO.mp3&apos;" description="Rename resource &apos;BOBO - 光荣.mp3&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/raw/BOBO - 光荣.mp3" name="BOBO.mp3" stamp="1423904121211" updateReferences="true"/>
+</session>

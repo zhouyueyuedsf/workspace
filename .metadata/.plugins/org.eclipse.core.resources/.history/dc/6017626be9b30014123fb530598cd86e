@@ -1,0 +1,21 @@
+package com.example.viewpager1;
+
+import android.app.Activity;
+import android.support.v4.view.*;
+import android.view.View;
+
+public class MyPagerAdapter extends PagerAdapter {
+	
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isViewFromObject(View arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

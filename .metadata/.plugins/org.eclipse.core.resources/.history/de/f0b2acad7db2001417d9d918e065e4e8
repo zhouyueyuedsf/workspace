@@ -1,0 +1,10 @@
+package closureandcallback;
+
+public class Callee2 extends MyIncrement {
+	private int i=0;
+	public void increment(){
+		super.increment();
+		i++;
+		System.out.print(i);
+	}
+}

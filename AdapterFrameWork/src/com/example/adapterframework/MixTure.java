@@ -7,9 +7,9 @@ import android.widget.ImageView;
 
 public class MixTure extends Activity{
 	ImageView portrait;
-	String userName;
-	String context;
-	Button button1,button2,button3;
+	String birthName;
+	String date;
+	String apartDay,calendarFlag;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub

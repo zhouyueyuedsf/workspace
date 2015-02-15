@@ -1,0 +1,20 @@
+package interfaceCallback;
+
+public class PrintHandler {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Printer printer = new Printer();
+		printer.setCallBack(new ICallBack() {
+			@Override
+			public void print() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+
+}

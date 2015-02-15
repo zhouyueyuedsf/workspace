@@ -1,0 +1,5 @@
+package closureandcallback;
+
+public interface Increamentable {
+
+}

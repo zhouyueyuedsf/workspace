@@ -1,0 +1,5 @@
+package closureandcallback;
+
+public class Callee1 implements Increamentable {
+
+}

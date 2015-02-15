@@ -1,0 +1,10 @@
+package factory;
+
+public class CycleFactory {
+	public static void construct(Cycle c){
+		
+	}
+	public static void main(String[] args) {
+		construct(new Bicycle());
+	}
+}

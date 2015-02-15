@@ -1,0 +1,12 @@
+package interfaceAdapter;
+
+public class Client {
+	public static void main(String[] args) {
+		AMDmainBorad main = new AMDmainBorad();
+		IntelToAMD toAMD = new IntelToAMD();
+		I7 cpu = new I7();
+		toAMD.setCpu(cpu);//I7CPU插入适配器
+		main.setCpu(toAMD);//适配器插入主板，要想转为AMD必须要有AMD接口
+		toAMD.ac();
+	}
+}

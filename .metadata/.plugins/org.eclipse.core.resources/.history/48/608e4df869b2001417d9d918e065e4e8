@@ -1,0 +1,8 @@
+package interfaceAdapter;
+
+public class Client {
+	public static void main(String[] args) {
+		AMDmainBorad main = new AMDmainBorad();
+		
+	}
+}

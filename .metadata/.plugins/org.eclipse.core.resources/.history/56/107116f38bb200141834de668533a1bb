@@ -1,0 +1,22 @@
+package com.example.animatordemo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+public class MainActivity extends ActionBarActivity {
+	private int[] res = { R.id.imageView_a, R.id.imageView_b, R.id.imageView_c,
+			R.id.imageView_d, R.id.imageView_f, R.id.imageView_g,
+			R.id.imageView_h };
+	private List<ImageView> imageViewList = new ArrayList<ImageView>();
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+}
