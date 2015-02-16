@@ -1,7 +1,0 @@
-package com.example.andriodio;
-
-import android.app.Activity;
-
-public class sqliteTest extends Activity {
-
-}

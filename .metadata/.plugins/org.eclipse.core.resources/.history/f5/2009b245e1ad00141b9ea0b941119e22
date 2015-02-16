@@ -1,7 +1,0 @@
-package com.example.sqlite;
-
-import android.database.sqlite.SQLiteOpenHelper;
-
-public class MyDataBaseHelper extends SQLiteOpenHelper {
-
-}

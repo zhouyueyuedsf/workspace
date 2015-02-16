@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="interfaceAdapter.AMDmainBorad"/>
 <fullyQualifiedTypeName name="interfaceAdapter.AMD"/>
 <fullyQualifiedTypeName name="interfaceAdapter.IntelToAMD"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="android.app.AlarmManager"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.example.birthdaytree.R.layout"/>
 </qualifiedTypeNameHistroy>

@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=FirstWebApp/D:\/eclipse\/workspace\/FirstWebApp\/libs\/android-support-v4.jar&lt;android.support.v4.media.routing(MediaRouterJellybeanMr1$ActiveScanWorkaround.class[ActiveScanWorkaround" modifiers="25" timestamp="1423575213985"/>
-<typeInfo handle="=javaTest/src&lt;factory{Cycle.java[Cycle" modifiers="513" timestamp="1423720081148"/>
-<typeInfo handle="=javaTest/src&lt;closureandcallback{MyIncrement.java[MyIncrement" modifiers="1" timestamp="1423722017930"/>
-<typeInfo handle="=javaTest/src&lt;closureandcallback{Increamentable.java[Increamentable" modifiers="513" timestamp="1423721617164"/>
+<typeInfo handle="=BirthdayTree/\/android_project\/adt-bundle-mac-x86_64-20131030\/sdk\/platforms\/android-19\/android.jar&lt;android.app(Activity.class[Activity" modifiers="33" timestamp="1382966102000"/>
 </typeInfoHistroy>
