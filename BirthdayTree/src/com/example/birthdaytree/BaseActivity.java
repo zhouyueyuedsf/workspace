@@ -1,7 +1,10 @@
 package com.example.birthdaytree;
 
+import java.io.Serializable;
+
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -47,7 +50,7 @@ public abstract class BaseActivity extends Activity {
 		if (!TextUtils.isEmpty(text)) {
 			if (mToast == null) {
 				mToast = Toast.makeText(getApplicationContext(), text,
-						Toast.LENGTH_SHORT);
+						Toast.LENGTH_LONG);
 			} else {
 				mToast.setText(text);
 			}
@@ -71,5 +74,15 @@ public abstract class BaseActivity extends Activity {
 		float scale=context.getResources().getDisplayMetrics().density;		
 		return (int) (scale*dipValue+0.5f);		
 	}
-	
+	public void Back(Context res,Class des){
+		Intent intent = new Intent(res,des);
+		startActivity(intent);
+	}
+	public void sendData(Context res,Class des,String key,Serializable value){
+		Bundle bundle = new Bundle();	
+		bundle.putSerializable(key, value);
+		Intent intent = new Intent(res,des);
+		intent.putExtras(bundle);
+		startActivity(intent);
+	}
 }

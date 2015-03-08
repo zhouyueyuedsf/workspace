@@ -1,0 +1,13 @@
+package javaThread;
+
+public class Threadtest2 implements Runnable {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,5 +1,0 @@
-package factory;
-
-public class Bicycle implements Cycle {
-
-}

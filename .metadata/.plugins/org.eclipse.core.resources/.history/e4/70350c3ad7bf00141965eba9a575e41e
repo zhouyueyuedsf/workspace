@@ -1,0 +1,17 @@
+package com.example.birthdaytree.util;
+
+import java.io.ByteArrayOutputStream;
+
+import android.graphics.Bitmap;
+import android.widget.ImageView;
+
+public class Compress {
+	static Bitmap compress(Bitmap image){
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		image.compress(Bitmap.CompressFormat.JPEG, 85, baos);
+		
+		return null;
+	}
+	
+
+}

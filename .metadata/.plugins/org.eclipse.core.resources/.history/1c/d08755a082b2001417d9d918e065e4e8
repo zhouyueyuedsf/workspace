@@ -1,5 +1,0 @@
-package interfaceCallback;
-
-public interface ICallBack {
-	void print();
-}

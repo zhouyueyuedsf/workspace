@@ -1,8 +1,0 @@
-package com.example.viewpager1;
-
-import android.app.Activity;
-import android.support.v4.view.*;
-
-public class PagerAdapter extends PagerAdapter {
-	
-}

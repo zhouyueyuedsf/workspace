@@ -1,0 +1,36 @@
+package com.example.birthdaytree.util;
+
+import java.io.ByteArrayOutputStream;
+
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.widget.ImageView;
+
+public class Compress {
+	private static double size;
+	static Bitmap compress(Bitmap image){
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		image.compress(Bitmap.CompressFormat.JPEG, 85, baos);
+		float zoom = (float) Math.sqrt(getsize(image) * 1024 /(float) baos.toByteArray().length);
+		Matrix matrix = new Matrix();
+		matrix.setScale(zoom, zoom);
+		Bitmap result = Bitmap.createBitmap(image,0,0,image.getWidth(),image.getHeight(),matrix,true);
+		baos.reset();
+		result.compress(Bitmap.CompressFormat.JPEG, 85, baos);
+		while(baos.toByteArray().length > size * 1024){
+			System.out.println(out.toByteArray().length);
+            matrix.setScale(0.9f, 0.9f);
+            result = Bitmap.createBitmap(result, 0, 0, result.getWidth(), result.getHeight(), matrix, true);
+            out.reset();
+            result.compress(Bitmap.CompressFormat.JPEG, 85, out);
+		}
+
+		return null;
+	}
+	private static int getsize(Bitmap image) {
+		// TODO Auto-generated method stub
+		size = Math.sqrt(image.getWidth() * image.getWidth()+image.getHeight() * image.getHeight()); 
+		return 0;
+	}
+
+}

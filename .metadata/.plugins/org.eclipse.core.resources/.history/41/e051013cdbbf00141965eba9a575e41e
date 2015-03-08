@@ -1,0 +1,52 @@
+package com.example.birthdaytree.util;
+
+import java.io.ByteArrayOutputStream;
+
+import android.content.ContentValues;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.provider.Browser;
+import android.widget.ImageView;
+
+public class BitmapUtil {
+
+	static Bitmap compress(Bitmap image){
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		image.compress(Bitmap.CompressFormat.JPEG, 85, baos);
+		float zoom = (float) Math.sqrt(getSize(image) * 1024 /(float) baos.toByteArray().length);
+		Matrix matrix = new Matrix();
+		matrix.setScale(zoom, zoom);
+		Bitmap result = Bitmap.createBitmap(image,0,0,image.getWidth(),image.getHeight(),matrix,true);
+		baos.reset();
+		result.compress(Bitmap.CompressFormat.JPEG, 85, baos);
+		while(baos.toByteArray().length > getSize(image) * 1024){
+			System.out.println(baos.toByteArray().length);
+            matrix.setScale(0.9f, 0.9f);
+            result = Bitmap.createBitmap(result, 0, 0, result.getWidth(), result.getHeight(), matrix, true);
+            baos.reset();
+            result.compress(Bitmap.CompressFormat.JPEG, 85, baos);
+		}
+
+		return result;
+	}
+	public void setBlob(Bitmap icon){
+		  if (icon == null) {  
+	            return;  
+	        }  
+	        // 最终图标要保存到浏览器的内部数据库中，系统程序均保存为SQLite格式，Browser也不例外，因为图片是二进制的所以使用字节数组存储数据库的   
+	        // BLOB类型   
+	        final ByteArrayOutputStream os = new ByteArrayOutputStream();  
+	        // 将Bitmap压缩成PNG编码，质量为100%存储           
+	        icon.compress(Bitmap.CompressFormat.PNG, 100, os);   
+	        // 构造SQLite的Content对象，这里也可以使用raw   
+	        ContentValues values = new ContentValues();   
+	        // 写入数据库的Browser.BookmarkColumns.TOUCH_ICON字段   
+	        values.put(Browser.BookmarkColumns.TOUCH_ICON, os.toByteArray());   
+	}
+	private static double getSize(Bitmap image) {
+		// TODO Auto-generated method stub
+	double	size = Math.sqrt(image.getWidth() * image.getWidth()+image.getHeight() * image.getHeight()); 
+		return size;
+	}
+
+}

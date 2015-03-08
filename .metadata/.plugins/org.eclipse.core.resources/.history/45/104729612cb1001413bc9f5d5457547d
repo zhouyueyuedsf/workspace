@@ -1,5 +1,0 @@
-package com.example.firstwebapp;
-
-public class Person extends BmobObject {
-
-}

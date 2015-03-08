@@ -1,8 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent"  
+    android:background="@drawable/slpash_ui_01"
+    >
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_alignParentBottom="true"
+	    android:layout_marginBottom="35dp"
+	    android:orientation="vertical"
+	    >
+	    <com.example.birthdaytree.LineEditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        style="?android:attr/textViewStyle"
+        android:background="@null"
+        android:layout_marginRight="40dp"
+        android:ems="10"
+        android:textSize="15sp"   
+        android:inputType="text"
+       ></com.example.birthdaytree.LineEditText>
+
+
+    <com.example.birthdaytree.LineEditText
+        android:id="@+id/birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_gravity="right"
+        style="?android:attr/textViewStyle"
+        android:layout_marginRight="40dp"
+        android:background="@null"
+        android:ems="10"
+        android:textSize="15sp"
+        android:paddingTop="10dp"
+        android:inputType="text" >
+      </com.example.birthdaytree.LineEditText>
+	    
+	    
+	</LinearLayout>
     
 
-</LinearLayout>
+   
+
+</RelativeLayout>

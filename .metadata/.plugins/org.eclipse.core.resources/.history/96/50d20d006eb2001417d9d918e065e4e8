@@ -1,7 +1,0 @@
-package interfaceAdapter;
-
-public class I7 {
-	public void power(){
-		System.out.print("通电工作了");
-	}
-}

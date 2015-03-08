@@ -9,7 +9,7 @@ public class Callee2 extends MyIncrement {
 		i++;
 		System.out.println(i);
 	}
-
+	//内部类
 	private class Closure implements Increamentable {
 
 		public void increment() {

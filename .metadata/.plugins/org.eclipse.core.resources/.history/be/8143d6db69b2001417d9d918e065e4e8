@@ -1,5 +1,0 @@
-package interfaceAdapter;
-
-public interface AMD {
-	void ac();//AMD通电工作
-}

@@ -37,7 +37,7 @@ import com.bmob.lostfound.i.IPopupItemClick;
  * @ClassName: MainActivity
  * @Description: TODO
  * @author smile
- * @date 2014-5-21 ÉÏÎç11:12:36
+ * @date 2014-5-21 Ã‰ÃÃÃ§11:12:36
  */
 public class MainActivity extends BaseActivity implements OnClickListener,
 		IPopupItemClick, OnItemLongClickListener {
@@ -48,9 +48,9 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	ListView listview;
 	Button btn_add;
 
-	protected QuickAdapter<Lost> LostAdapter;// Ê§Îï
+	protected QuickAdapter<Lost> LostAdapter;// ÃŠÂ§ÃÃ¯
 
-	protected QuickAdapter<Found> FoundAdapter;// ÕĞÁì
+	protected QuickAdapter<Found> FoundAdapter;// Ã•ÃÃÃ¬
 
 	private Button layout_found;
 	private Button layout_lost;
@@ -75,12 +75,12 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 
 		layout_action = (RelativeLayout) findViewById(R.id.layout_action);
 		layout_all = (LinearLayout) findViewById(R.id.layout_all);
-		// Ä¬ÈÏÊÇÊ§Îï½çÃæ
+		// Ã„Â¬ÃˆÃÃŠÃ‡ÃŠÂ§ÃÃ¯Â½Ã§ÃƒÃ¦
 		tv_lost = (TextView) findViewById(R.id.tv_lost);
 		tv_lost.setTag("Lost");
 		listview = (ListView) findViewById(R.id.list_lost);
 		btn_add = (Button) findViewById(R.id.btn_add);
-		// ³õÊ¼»¯³¤°´µ¯´°
+		// Â³ÃµÃŠÂ¼Â»Â¯Â³Â¤Â°Â´ÂµÂ¯Â´Â°
 		initEditPop();
 	}
 
@@ -139,7 +139,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 			};
 		}
 		listview.setAdapter(LostAdapter);
-		// Ä¬ÈÏ¼ÓÔØÊ§Îï½çÃæ
+		// Ã„Â¬ÃˆÃÂ¼Ã“Ã”Ã˜ÃŠÂ§ÃÃ¯Â½Ã§ÃƒÃ¦
 		queryLosts();
 	}
 
@@ -156,7 +156,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	@SuppressWarnings("deprecation")
 	private void showListPop() {
 		View view = LayoutInflater.from(this).inflate(R.layout.pop_lost, null);
-		// ×¢Èë
+		// Ã—Â¢ÃˆÃ«
 		layout_found = (Button) view.findViewById(R.id.layout_found);
 		layout_lost = (Button) view.findViewById(R.id.layout_lost);
 		layout_found.setOnClickListener(this);
@@ -180,7 +180,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 		morePop.setFocusable(true);
 		morePop.setOutsideTouchable(true);
 		morePop.setBackgroundDrawable(new BitmapDrawable());
-		// ¶¯»­Ğ§¹û ´Ó¶¥²¿µ¯ÏÂ
+		// Â¶Â¯Â»Â­ÃÂ§Â¹Ã» Â´Ã“Â¶Â¥Â²Â¿ÂµÂ¯ÃÃ‚
 		morePop.setAnimationStyle(R.style.MenuPop);
 		morePop.showAsDropDown(layout_action, 0, -dip2px(this, 2.0F));
 	}
@@ -213,7 +213,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 			return;
 		}
 		switch (requestCode) {
-		case Constants.REQUESTCODE_ADD:// Ìí¼Ó³É¹¦Ö®ºóµÄ»Øµ÷
+		case Constants.REQUESTCODE_ADD:// ÃŒÃ­Â¼Ã“Â³Ã‰Â¹Â¦Ã–Â®ÂºÃ³ÂµÃ„Â»Ã˜ÂµÃ·
 			String tag = tv_lost.getTag().toString();
 			if (tag.equals("Lost")) {
 				queryLosts();
@@ -225,7 +225,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	}
 
 	/**
-	 * ²éÑ¯È«²¿Ê§ÎïĞÅÏ¢ queryLosts
+	 * Â²Ã©Ã‘Â¯ÃˆÂ«Â²Â¿ÃŠÂ§ÃÃ¯ÃÃ…ÃÂ¢ queryLosts
 	 * 
 	 * @return void
 	 * @throws
@@ -233,7 +233,8 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	private void queryLosts() {
 		showView();
 		BmobQuery<Lost> query = new BmobQuery<Lost>();
-		query.order("-createdAt");// °´ÕÕÊ±¼ä½µĞò
+		query.order("-createdAt");
+		//æŸ¥è¯¢æ‰€æœ‰æ•°æ®
 		query.findObjects(this, new FindListener<Lost>() {
 
 			@Override
@@ -262,7 +263,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	public void queryFounds() {
 		showView();
 		BmobQuery<Found> query = new BmobQuery<Found>();
-		query.order("-createdAt");// °´ÕÕÊ±¼ä½µĞò
+		query.order("-createdAt");// Â°Â´Ã•Ã•ÃŠÂ±Â¼Ã¤Â½ÂµÃÃ²
 		query.findObjects(this, new FindListener<Found>() {
 
 			@Override
@@ -275,7 +276,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 					FoundAdapter.notifyDataSetChanged();
 					return;
 				}
-				FoundAdapter.addAll(arg0);//¸øÕÒ³öÀ´µÄËùÓĞÁĞ±íÏî·ÖÅäFoundAdapter
+				FoundAdapter.addAll(arg0);//Â¸Ã¸Ã•Ã’Â³Ã¶Ã€Â´ÂµÃ„Ã‹Ã¹Ã“ÃÃÃÂ±Ã­ÃÃ®Â·Ã–Ã…Ã¤FoundAdapter
 				listview.setAdapter(FoundAdapter);
 				progress.setVisibility(View.GONE);
 			}
@@ -289,7 +290,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	}
 
 	/**
-	 * ÇëÇó³ö´í»òÕßÎŞÊı¾İÊ±ºòÏÔÊ¾µÄ½çÃæ showErrorView
+	 * Ã‡Ã«Ã‡Ã³Â³Ã¶Â´Ã­Â»Ã²Ã•ÃŸÃÃÃŠÃ½Â¾ÃÃŠÂ±ÂºÃ²ÃÃ”ÃŠÂ¾ÂµÃ„Â½Ã§ÃƒÃ¦ showErrorView
 	 * 
 	 * @return void
 	 * @throws

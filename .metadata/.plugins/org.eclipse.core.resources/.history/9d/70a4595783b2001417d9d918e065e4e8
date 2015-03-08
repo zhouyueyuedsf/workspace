@@ -1,7 +1,0 @@
-package interfaceCallback;
-
-public class Printer {
-	public void setCallBack(ICallBack ic){
-		
-	}
-}

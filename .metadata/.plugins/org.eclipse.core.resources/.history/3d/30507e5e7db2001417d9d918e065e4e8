@@ -1,5 +1,0 @@
-package closureandcallback;
-
-public class Callee2 extends MyIncrement {
-
-}
