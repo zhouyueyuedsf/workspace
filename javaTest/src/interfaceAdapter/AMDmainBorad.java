@@ -1,5 +1,5 @@
 package interfaceAdapter;
-
+//建立AMD主板
 public class AMDmainBorad {
 	private AMD cpu;
 	public void start(){

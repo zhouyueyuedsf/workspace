@@ -1,0 +1,8 @@
+package com.example.birthdaytree.util;
+
+public class FIleUtil {
+	
+	/**
+	 * 存储图像到
+	 */
+}

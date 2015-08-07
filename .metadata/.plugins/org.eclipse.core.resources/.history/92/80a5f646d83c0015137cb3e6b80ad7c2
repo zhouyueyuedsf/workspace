@@ -1,0 +1,12 @@
+package com.example.birthdaytree.config;
+
+public class BirthdaytreeConstant {
+	public final static String GET_CARD = "com.example.birthdaytree.GET_CARD";
+	public final static String GET_CLASS = "com.example.birthdaytree.GET_CLASS";
+	public final static String[] HOBBY = { "篮球", "足球", "排球", "羽毛球", "享受书籍", "音乐",
+			"爱编程", "爱养花", "赏电影", "艺术", "玩手机", "看新闻", "爱时尚", "游戏达人", "登山健将", "爱旅游",
+			"单反达人", "品茶", "爱逛街", "社交"};
+	public final static int CAMERA = 1;
+	public final static int SELECTHOBBY = 2;
+
+}

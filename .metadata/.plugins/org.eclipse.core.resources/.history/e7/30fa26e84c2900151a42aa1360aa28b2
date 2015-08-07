@@ -1,0 +1,47 @@
+package com.imooc.tab04;
+
+import java.util.Date;
+import java.util.Queue;
+
+import org.achartengine.ChartFactory;
+import org.achartengine.GraphicalView;
+import org.achartengine.model.TimeSeries;
+import org.achartengine.model.XYMultipleSeriesDataset;
+import org.achartengine.model.XYSeries;
+import org.achartengine.renderer.XYMultipleSeriesRenderer;
+import org.achartengine.renderer.XYSeriesRenderer;
+
+import android.content.Context;
+
+public class ChartUtil {
+	private GraphicalView graphicalView;
+	private XYMultipleSeriesDataset xyMultipleSeriesDataset;
+	private XYMultipleSeriesRenderer xyMultipleSeriesRenderer;
+	private TimeSeries timeSeries;
+	private XYSeriesRenderer xySeriesRenderer;
+	private Context context;
+
+	public ChartUtil(Context context) {
+		this.context = context;
+	}
+
+	/**
+	 * 获取图表
+	 * 
+	 * @return
+	 */
+	public GraphicalView getGraphicalView() {
+		graphicalView = ChartFactory.getCubeLineChartView(context,
+				xyMultipleSeriesDataset, xyMultipleSeriesRenderer, 0.1f);
+		return graphicalView;
+	}
+	
+	public XYMultipleSeriesDataset createDataSet(Queue<Date> x,Queue<Double> y){
+		for(int i =0; i<x.size();i++){
+			timeSeries.add(x.peek(), y.peek());
+		}
+		return xyMultipleSeriesDataset;
+		
+	}
+	
+}

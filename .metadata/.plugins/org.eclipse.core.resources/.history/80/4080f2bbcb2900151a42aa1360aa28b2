@@ -1,0 +1,52 @@
+package com.imooc.tab04;
+
+
+import java.util.Date;
+import java.util.Queue;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.ArrayBlockingQueue;
+
+import org.achartengine.GraphicalView;
+import org.achartengine.model.TimeSeries;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+@SuppressLint("ValidFragment")
+public class TabFragment extends Fragment
+{
+	private int pos;
+	Queue<Date> x = new ArrayBlockingQueue<Date>(60);
+	Queue<Double> y = new ArrayBlockingQueue<Double>(60);
+	GraphicalView view;
+	ChartUtil chartUtil;
+	@SuppressLint("ValidFragment")
+	public TabFragment(int pos)
+	{
+		this.pos = pos;//记录是那一个fragment
+	}
+	//fragment显示的数据
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState)
+	{
+		 chartUtil = new ChartUtil();
+		chartUtil.setXYRenderer((double) System.currentTimeMillis(), 1.00, "IO利用率", "时间", "单位%");
+		new Timer().schedule(new TimerTask() {
+			
+			@Override
+			public void run() {
+				x.add(new Date(System.currentTimeMillis()));
+				y.add((double) LinuxSystemTool.getIOofDisk());
+				view = chartUtil.getGraphicalView();
+				return view;
+			}
+		}, 0,1000);
+	}
+}

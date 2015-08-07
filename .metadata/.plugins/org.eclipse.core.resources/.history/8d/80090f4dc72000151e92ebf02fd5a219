@@ -1,0 +1,54 @@
+package com.example.myview;
+
+import java.util.List;
+
+import com.example.birthdaytree.adapterframe.BaseAdapterHelper;
+import com.example.birthdaytree.adapterframe.QuickAdapter;
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+public class MyView extends RelativeLayout{
+	TextView textView,textView2,textView3;
+	List<String[]> strings;
+	ListView listView;
+	public MyView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+	   View myView = LayoutInflater.from(context).inflate(R.layout.myview, this, true); 
+		textView = (TextView)findViewById(R.id.apartDay);
+		textView2 = (TextView)findViewById(R.id.birthName);
+		textView3 = (TextView)findViewById(R.id.date);
+		listView = (ListView)findViewById(R.id.listview);
+		String[] str = {"8天","周月","2013.2.3"};
+		String[] str2 = {"8天","周月","2013.2.3"};
+		String[] str3 = {"8天","周月","2013.2.3"};
+		strings.add(str);
+		strings.add(str2);
+		strings.add(str3);
+		QuickAdapter<String[]> adapter;
+		adapter = new QuickAdapter<String[]>(context,R.layout.show_bithday_listview) {
+			
+			@Override
+			protected void convert(BaseAdapterHelper helper, String[] item) {
+				// TODO Auto-generated method stub
+				helper.setText(R.id.apartDay, item[1]);
+				helper.setText(R.id.birthName, item[2]);
+				helper.setText(R.id.date, item[3]);
+				
+			}
+		};
+		adapter.addAll(strings);
+		listView.setAdapter(adapter);
+		//		int color = ta.getColor(R.styleable., defValue)
+	}
+
+	
+
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">android_safe_project</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_solutin">SolutinActivity</string>
+    <string name="title_activity_solution_activity2">SolutionActivity2</string>
+    <string name="title_activity_setxy">SetxyActivity</string>
+    <string name="title_activity_lock">LockActivity</string>
+    <string name="title_activity_ok">OkActivity</string>
+    <string name="title_activity_crop">CropActivity</string>
+    <string name="title_activity_cut">CutActivity</string>
+
+</resources>

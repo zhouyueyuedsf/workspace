@@ -1,0 +1,259 @@
+package com.gc.materialdesign.views;
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.ViewDebug.ExportedProperty;
+import android.widget.Checkable;
+import android.widget.CompoundButton;
+
+import com.gc.materialdesign.R;
+
+public class RadioButton extends CompoundButton implements Checkable{
+	private static final long ANIMATION_DURATION = 200;// 动画持续的时间
+    private static final int StateNormal = 1;
+    private static final int StateTouchDown = 2;
+    private static final int StateTouchUp = 3;
+
+    private int mState = StateNormal;
+    private long mStartTime;
+    private int mColor;
+    private int mCheckedColor;
+    private int mRadioWidth;// 宽度
+    private int mRadioHeight;// 高度
+    private int mBorderRadius;
+    private int mThumbRadius;
+    private int mRippleRadius;
+    private int mStrokeWidth;
+    private Rect mFingerRect;
+    private boolean mMoveOutside;
+    private boolean mChecked = false;   ////状态是否选中  
+    private boolean mBroadcasting;
+
+    private OnCheckedChangeListener mOnCheckedChangeWidgetListener; 
+    private Paint borderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private Paint thumbPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private Paint ripplePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+    public RadioButton(Context context) {
+        this(context, null);
+    }
+
+    public RadioButton(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public RadioButton(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.RadioButton);
+        //第二个参数为默认值
+        mColor = attributes.getColor(R.styleable.RadioButton_radio_color, getResources().getColor(R.color.radio_color));
+        mCheckedColor = attributes.getColor(R.styleable.RadioButton_radio_checked_color, getResources().getColor(R.color.radio_checked_color));
+        attributes.recycle();
+        mRadioWidth = getResources().getDimensionPixelSize(R.dimen.radio_width);
+        mRadioHeight = getResources().getDimensionPixelSize(R.dimen.radio_height);
+        mBorderRadius = getResources().getDimensionPixelSize(R.dimen.radio_border_radius);
+        mThumbRadius = getResources().getDimensionPixelSize(R.dimen.radio_thumb_radius);
+        mRippleRadius = getResources().getDimensionPixelSize(R.dimen.radio_ripple_radius);
+        mStrokeWidth = getResources().getDimensionPixelSize(R.dimen.radio_stroke_width);
+
+        thumbPaint.setColor(mCheckedColor);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        widthMeasureSpec = MeasureSpec.makeMeasureSpec(measureWidth(widthMeasureSpec), MeasureSpec.EXACTLY);
+        heightMeasureSpec = MeasureSpec.makeMeasureSpec(measureHeight(heightMeasureSpec), MeasureSpec.EXACTLY);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    private int measureWidth(int measureSpec) {
+        int result;
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+        if (specMode == MeasureSpec.EXACTLY) {
+            if (specSize < mRadioWidth) {
+                result = mRadioWidth;
+            } else {
+                result = specSize;
+            }
+        } else {
+            result = mRadioWidth;
+        }
+        return result;
+    }
+
+    private int measureHeight(int measureSpec) {
+        int result;
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+        if (specMode == MeasureSpec.EXACTLY) {
+            if (specSize < mRadioHeight) {
+                result = mRadioHeight;
+            } else {
+                result = specSize;
+            }
+        } else {
+            result = mRadioHeight;
+        }
+        return result;
+    }
+    @Override  
+    public boolean isChecked() {  
+        // TODO Auto-generated method stub  
+        return mChecked;  
+    }  
+    @Override
+    public void setChecked(boolean checked) {
+    	   if (mChecked != checked) {  
+               mChecked = checked;  
+               this.refreshDrawableState();  
+               invalidate();
+               // Avoid infinite recursions if setChecked() is called from a listener  
+               if (mBroadcasting) { 
+                   return;  
+               }  
+               mBroadcasting = true;  
+               if (mOnCheckedChangeWidgetListener != null) {  
+                   mOnCheckedChangeWidgetListener.onCheckedChanged(this, mChecked);  
+               }  
+               mBroadcasting = false;              
+           }  
+    }
+    @Override  
+    public void toggle() {  
+        if (!isChecked()) {  
+            setChecked(!mChecked);  
+        }  
+    } 
+    @Override  
+    public boolean performClick() {  
+        // TODO Auto-generated method stub  
+        /* 
+         * XXX: These are tiny, need some surrounding 'expanded touch area', 
+         * which will need to be implemented in Button if we only override 
+         * performClick() 
+         */  
+  
+        /* When clicked, toggle the state */  
+        toggle();  
+        return super.performClick();  
+    }  
+    void setOnCheckedChangeWidgetListener(OnCheckedChangeListener listener) {  
+        this.mOnCheckedChangeWidgetListener = listener;  
+    }  
+    public static interface OnCheckedChangeListener {  
+        /** 
+         * Called when the checked state of a compound button has changed. 
+         * 
+         * @param buttonView The compound button view whose state has changed. 
+         * @param isChecked  The new checked state of buttonView. 
+         */  
+        void onCheckedChanged(RadioButton buttonView, boolean isChecked);  
+    }  
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (isEnabled()) {
+            switch (event.getAction()) {
+            	//当用户按下按钮
+                case MotionEvent.ACTION_DOWN:
+                    mMoveOutside = false;
+                    mState = StateTouchDown;
+                    mFingerRect = new Rect(getLeft(), getTop(), getRight(), getBottom());
+                    mStartTime = System.currentTimeMillis();
+                    invalidate();
+                    break;
+                //当用户移动
+                case MotionEvent.ACTION_MOVE:
+                    if (!mFingerRect.contains(getLeft() + (int) event.getX(), getTop() + (int) event.getY())) {
+                        mMoveOutside = true;
+                        mState = StateNormal;
+                        mStartTime = System.currentTimeMillis();
+                        invalidate();
+                    }
+                    break;
+                //当用户从按钮处抬起手指
+                case MotionEvent.ACTION_UP:
+                    if (!mMoveOutside) {
+                        mState = StateTouchUp;
+                        setChecked(!isChecked());
+                        mStartTime = System.currentTimeMillis();
+                        invalidate();
+                    }
+                    break;
+                //当用户移动后从非按钮出抬起手指,当焦点移动到键之外
+                case MotionEvent.ACTION_CANCEL:
+                    mState = StateNormal;         
+                    invalidate();
+                    break;
+            }
+        }
+        return true;
+    }
+
+    private int rippleColor(int color) {
+        int alpha = Math.round(Color.alpha(color) * 0.2f);
+        int red = Color.red(color);
+        int green = Color.green(color);
+        int blue = Color.blue(color);
+        return Color.argb(alpha, red, green, blue);
+    }
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int rippleRadius = 0;
+        int thumbRadius = isChecked() ? mThumbRadius : 0;
+        long elapsed = System.currentTimeMillis() - mStartTime;
+        switch (mState) {
+            case StateNormal:
+                break;
+            case StateTouchDown:
+                ripplePaint.setAlpha(255);
+                if (elapsed < ANIMATION_DURATION) {
+                    rippleRadius = Math.round(elapsed * mRippleRadius / ANIMATION_DURATION);
+                } else {
+                    rippleRadius = mRippleRadius;
+                }
+                postInvalidate();//可再一次触发ondraw事件
+                break;
+            case StateTouchUp:
+                if (elapsed < ANIMATION_DURATION) {
+                    int alpha = Math.round((ANIMATION_DURATION - elapsed) * 255 / ANIMATION_DURATION);
+                    ripplePaint.setAlpha(alpha);
+                    rippleRadius = Math.round((ANIMATION_DURATION - elapsed) * mRippleRadius / ANIMATION_DURATION);
+                    if (isChecked()) {
+                        thumbRadius = Math.round(elapsed * mThumbRadius / ANIMATION_DURATION);
+                    } else {
+                        thumbRadius = Math.round((ANIMATION_DURATION - elapsed) * mThumbRadius / ANIMATION_DURATION);
+                    }
+                } else {
+                    mState = StateNormal;
+                    rippleRadius = 0;
+                    ripplePaint.setAlpha(0);
+                }
+                postInvalidate();
+                break;
+        }
+        if (isChecked()) {
+            ripplePaint.setColor(rippleColor(mCheckedColor));
+
+            borderPaint.setColor(mCheckedColor);
+            borderPaint.setStyle(Paint.Style.STROKE);
+            borderPaint.setStrokeWidth(mStrokeWidth);
+        } else {
+            ripplePaint.setColor(rippleColor(mColor));
+
+            borderPaint.setColor(mColor);
+            borderPaint.setStyle(Paint.Style.STROKE);
+            borderPaint.setStrokeWidth(mStrokeWidth);
+        }
+        canvas.drawCircle(getWidth() / 2, getHeight() / 2, rippleRadius, ripplePaint);
+        canvas.drawCircle(getWidth() / 2, getHeight() / 2, mBorderRadius, borderPaint);
+        canvas.drawCircle(getWidth() / 2, getHeight() / 2, thumbRadius, thumbPaint);
+    }
+}

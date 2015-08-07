@@ -1,0 +1,6 @@
+/** Automatically generated file. DO NOT MODIFY */
+package pym.test.wifi_ap_server;
+
+public final class BuildConfig {
+    public final static boolean DEBUG = true;
+}

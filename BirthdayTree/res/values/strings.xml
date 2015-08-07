@@ -2,15 +2,23 @@
 <resources>
 
     <string name="app_name">生日树</string>
-    <string name="action_settings">设置</string>
+    <string name="action_settings">你好</string>
     <string name="hello_world">Hello world!</string>
     <string name="name">姓名</string>
     <string name="birthday">生日</string>
+    <string name="set_birthday">点击设置生日</string>
+    
     <string name="sex">性别</string>
     <string name="hobby">爱好</string>
     <string name="add_other">添加备注</string>
-	 <string name="man">男</string>
-	  <string name="woman">女</string>
-	  <string name="count_person">本月即将生日的人数</string>
-	  <string name="birthdaying_name">将生日的人</string>
+    <string name="man">男</string>
+    <string name="woman">女</string>
+    <string name="count_person">本月即将生日的人数</string>
+    <string name="birthdaying_name">将生日的人</string>
+	
+    <string name="now_day">当天</string>
+    <string name="now_day_before_one">提前一天</string>
+    <string name="now_day_before_three">提前三天</string>
+    <string name="now_day_before_seven">提前七天</string>
+    <string name="now_day_no">不提醒</string>
 </resources>

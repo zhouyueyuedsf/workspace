@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SharedPreferencesUtils.java&apos; to &apos;imooc-tab04/src/com.imooc.tab04&apos;&#x0A;- Original project: &apos;BirthdayTree&apos;&#x0A;- Destination element: &apos;imooc-tab04/src/com.imooc.tab04&apos;&#x0A;- Original element: &apos;com.example.birthdaytree.util.SharedPreferencesUtils.java&apos;" description="Copy compilation unit" destination="=imooc-tab04/src&lt;com.imooc.tab04" element1="/src&lt;com.example.birthdaytree.util{SharedPreferencesUtils.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1436772516838" units="1" version="1.0"/>
+</session>

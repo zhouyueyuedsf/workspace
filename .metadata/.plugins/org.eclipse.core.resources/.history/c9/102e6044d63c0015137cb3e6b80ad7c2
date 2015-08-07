@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:splash="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#50ffffff"
+    android:orientation="vertical" >
+
+    <com.gc.materialdesign.views.ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <com.gc.materialdesign.views.FlowLayout
+            android:id="@+id/hobby_select_flowlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp" >
+        </com.gc.materialdesign.views.FlowLayout>
+    </com.gc.materialdesign.views.ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical" >
+
+            <com.gc.materialdesign.icon.DroidiconBadge
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                splash:db_icon="fa-times"
+                splash:db_icon_color="#cccccc"
+                splash:db_size="23dp" />
+
+            <com.gc.materialdesign.icon.DroidiconBadge
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                splash:db_icon="fa-check"
+                splash:db_icon_color="#cccccc"
+                splash:db_size="23dp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

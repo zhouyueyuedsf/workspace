@@ -1,0 +1,16 @@
+
+**** Build of configuration Debug for project hell ****
+
+make all 
+Building file: ../test/Hello.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"test/Hello.d" -MT"test/Hello.d" -o "test/Hello.o" "../test/Hello.cpp"
+Finished building: ../test/Hello.cpp
+ 
+Building target: hell
+Invoking: MacOS X C++ Linker
+g++  -o "hell"  ./test/Hello.o   
+Finished building target: hell
+ 
+
+**** Build Finished ****

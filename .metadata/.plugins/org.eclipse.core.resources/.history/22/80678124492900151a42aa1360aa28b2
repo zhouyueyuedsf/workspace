@@ -1,0 +1,22 @@
+package com.imooc.tab04;
+
+import org.achartengine.GraphicalView;
+import org.achartengine.model.XYMultipleSeriesDataset;
+import org.achartengine.model.XYSeries;
+import org.achartengine.renderer.XYMultipleSeriesRenderer;
+import org.achartengine.renderer.XYSeriesRenderer;
+
+import android.content.Context;
+
+public class ChartUtil {
+	private GraphicalView graphicalView;
+	private XYMultipleSeriesDataset xyMultipleSeriesDataset;
+	private XYMultipleSeriesRenderer multipleSeriesRenderer;
+	private XYSeries xySeries;
+	private XYSeriesRenderer xySeriesRenderer;
+	private Context context;
+	
+	public ChartUtil(Context context){
+		this.context = context;
+	}
+}

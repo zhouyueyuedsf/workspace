@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:birthdaydetail="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/topbar"
+        android:gravity="center_vertical"
+        >
+         <com.gc.materialdesign.icon.DroidiconBadge 
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            birthdaydetail:db_icon="fa-arrow-left"
+            />
+
+         <com.gc.materialdesign.icon.DroidiconBadge
+             android:id="@+id/edit"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             birthdaydetail:db_icon="fa-pencil"
+              />
+
+    </RelativeLayout>
+    <ImageView 
+        android:id="@+id/GuestHeadImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name" />
+
+        <com.example.birthdaytree.LineEditText
+            android:id="@+id/GuestName"
+            style="?android:attr/textViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:ems="10" 
+            android:inputType="text"
+            android:layout_marginLeft="10dp">
+        </com.example.birthdaytree.LineEditText>
+    </LinearLayout>
+    
+     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:id="@+id/id1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/birthday" />
+
+        <com.example.birthdaytree.LineEditText
+             android:id="@+id/GuestBirthday"
+            style="?android:attr/textViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:ems="10" 
+            android:inputType="text"
+            android:layout_marginLeft="10dp">
+        </com.example.birthdaytree.LineEditText>
+    </LinearLayout>
+     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sex" 
+            
+         />
+		
+        <com.example.birthdaytree.LineEditText
+             android:id="@+id/GuestSex"
+             android:editable="false"
+            style="?android:attr/textViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:ems="10" 
+            android:inputType="text"
+            android:layout_marginLeft="10dp">
+        </com.example.birthdaytree.LineEditText>
+    </LinearLayout>
+     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hobby" />
+
+        <com.example.birthdaytree.LineEditText
+             android:id="@+id/GuestHobby"
+            style="?android:attr/textViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:ems="10" 
+            android:inputType="text"
+            android:layout_marginLeft="10dp">
+        </com.example.birthdaytree.LineEditText>
+    </LinearLayout>
+	  <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        >
+         
+	     <ImageView 
+	         android:id="@+id/save"
+	         android:layout_width="wrap_content"
+        	 android:layout_height="wrap_content"
+	         android:src="@drawable/topbarright"
+	         />
+    </LinearLayout>
+
+
+
+</LinearLayout>

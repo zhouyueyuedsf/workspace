@@ -66,6 +66,7 @@ public class SlideDateTimeDialogFragment extends DialogFragment implements DateF
     }
 
     /**
+     * 单例模式
      * <p>Return a new instance of {@code SlideDateTimeDialogFragment} with its bundle
      * filled with the incoming arguments.</p>
      *
@@ -286,7 +287,7 @@ public class SlideDateTimeDialogFragment extends DialogFragment implements DateF
     {
         mCalendar.set(year, month, day);
 
-        updateDateTab();
+        updateDateTab();//更新时间显示
     }
 
     /**

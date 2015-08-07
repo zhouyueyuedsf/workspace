@@ -18,7 +18,7 @@ public class LineEditText extends EditText {
 	        mPaint = new Paint();
 
 	        mPaint.setStyle(Paint.Style.STROKE);
-	        mPaint.setColor(Color.GREEN);
+//	        mPaint.setColor(Color.GREEN);
 	    }
 
 		/** 

@@ -1,8 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=BirthdayTree/\/android_project\/workspace\/BirthdayTree\/libs\/android-support-v4.jar&lt;android.support.v4.view(ViewPager.class[ViewPager" modifiers="33" timestamp="1424075078000"/>
-<typeInfo handle="=BirthdayTree/src&lt;com.example.birthdaytree{BaseActivity.java[BaseActivity" modifiers="1025" timestamp="1425194510000"/>
-<typeInfo handle="=javaTest/\/Library\/Java\/JavaVirtualMachines\/jdk1.8.0_31.jdk\/Contents\/Home\/jre\/lib\/rt.jar&lt;java.lang(Thread.class[Thread" modifiers="33" timestamp="1418879070000"/>
-<typeInfo handle="=javaTest/\/Library\/Java\/JavaVirtualMachines\/jdk1.8.0_31.jdk\/Contents\/Home\/jre\/lib\/rt.jar&lt;java.lang(Runnable.class[Runnable" modifiers="1537" timestamp="1418879070000"/>
-<typeInfo handle="=BirthdayTree/\/android_project\/adt-bundle-mac-x86_64-20131030\/sdk\/platforms\/android-19\/android.jar&lt;android.app(Activity.class[Activity" modifiers="33" timestamp="1382966102000"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>

@@ -20,6 +20,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
@@ -41,7 +42,9 @@ public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends B
 	protected final int layoutResId;
 
 	protected final List<T> data;
-
+	
+	protected int viewId;
+	
 	protected boolean displayIndeterminateProgress = false;
 
     /**
@@ -77,7 +80,9 @@ public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends B
         if (position >= data.size()) return null;
         return data.get(position);
     }
-
+    public T getT(){
+    	return data.get(viewId);
+    }
     @Override
     public long getItemId(int position) {
         return position;
@@ -87,7 +92,9 @@ public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends B
     public int getViewTypeCount() {
         return 2;
     }
-
+/**
+ * 如果每个Item不同得重写该方法	
+ */
     @Override
     public int getItemViewType(int position) {
         return position >= data.size() ? 1 : 0;
@@ -95,12 +102,15 @@ public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends B
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+    	View view = null;
         if (getItemViewType(position) == 0) {
             final H helper = getAdapterHelper(position, convertView, parent);
             convert(helper, getItem(position));
+            viewId = position;
+            view =  helper.getView();
             return helper.getView();
         }
-
+      
         return createIndeterminateProgressView(convertView, parent);
     }
 

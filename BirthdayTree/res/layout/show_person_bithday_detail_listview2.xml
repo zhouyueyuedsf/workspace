@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:birthdaydetail="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation= "horizontal"
+    android:background="#ffffff">
+    
+
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    >
+	      <TextView 
+	        android:id="@+id/attr"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="20dp"
+	        android:textSize="16dp"
+	        android:textColor="#000"
+	        android:text="生日"
+	        />
+	         
+	      <TextView 
+	        android:id="@+id/info"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="20dp"
+	        android:textSize="16dp"
+	        android:textColor="#000"
+	        android:text="1993.12.16"
+	        />
+	</LinearLayout> 
+	 
+	      
+	       <com.gc.materialdesign.icon.DroidiconBadge 
+	        android:id="@+id/hobby_icon"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="right" 
+	        birthdaydetail:db_icon="fa-birthday-cake"
+	        />
+	  
+
+
+
+</LinearLayout>

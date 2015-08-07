@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;compositepatter&apos; to &apos;compositepattern&apos;&#x0A;- Original project: &apos;javaTest&apos;&#x0A;- Original element: &apos;javaTest/src/compositepatter&apos;&#x0A;- Renamed element: &apos;javaTest/src/compositepattern&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;compositepatter&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;compositepatter" name="compositepattern" qualified="false" references="true" stamp="1436347360775" textual="false" version="1.0"/>
+</session>

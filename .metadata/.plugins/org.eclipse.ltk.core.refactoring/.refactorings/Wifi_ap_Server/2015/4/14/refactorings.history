@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;WifiApServerManager.java&apos; to &apos;WifiServerDemo/src/com.example.wifiserverdemo&apos;&#x0A;- Original project: &apos;Wifi_ap_Server&apos;&#x0A;- Destination element: &apos;WifiServerDemo/src/com.example.wifiserverdemo&apos;&#x0A;- Original element: &apos;pym.test.server.WifiApServerManager.java&apos;" description="Copy compilation unit" destination="=WifiServerDemo/src&lt;com.example.wifiserverdemo" element1="/src&lt;pym.test.server{WifiApServerManager.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1428063405365" units="1" version="1.0"/>
+</session>

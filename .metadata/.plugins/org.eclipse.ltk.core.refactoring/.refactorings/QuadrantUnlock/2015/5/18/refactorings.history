@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SharedPreferencesUtils.java&apos; to &apos;BirthdayTree/src/com.example.birthdaytree.util&apos;&#x0A;- Original project: &apos;QuadrantUnlock&apos;&#x0A;- Destination element: &apos;BirthdayTree/src/com.example.birthdaytree.util&apos;&#x0A;- Original element: &apos;com.example.quadrantunlock.SharedPreferencesUtils.java&apos;" description="Copy compilation unit" destination="=BirthdayTree/src&lt;com.example.birthdaytree.util" element1="/src&lt;com.example.quadrantunlock{SharedPreferencesUtils.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1430474284066" units="1" version="1.0"/>
+</session>

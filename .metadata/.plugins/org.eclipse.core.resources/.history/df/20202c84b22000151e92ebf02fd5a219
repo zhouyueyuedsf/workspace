@@ -1,0 +1,173 @@
+package org.transfer.thread;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+
+import org.transfer.secret.DecryptRecevieFile;
+import org.transfer.util.FileTransferFormat;
+import org.transfer.util.Log;
+import org.transfer.window.StateShow;
+
+public class RecevieThread extends Thread {
+
+	private Socket socket;
+
+	public DataOutputStream dos;
+
+	public DataInputStream dis;
+
+	public DataOutputStream dosFile;
+
+	public byte[] message = new byte[1024];
+
+	public FileTransferFormat ftf;
+
+	public File file;
+
+	public JFrame jf;
+
+	public StateShow stateShow;
+
+	public boolean status = true;
+
+	public RecevieThread(JFrame jf, Socket socket, FileTransferFormat ftf) {
+		this.jf = jf;
+		this.socket = socket;
+		this.ftf = ftf;
+		init();
+	}
+
+	public void init() {
+		Log.print("init()");
+		try {
+			dos = new DataOutputStream(socket.getOutputStream());
+			dis = new DataInputStream(new BufferedInputStream(
+					socket.getInputStream()));
+		} catch (IOException e) {
+			Log.print("cilet thread:" + e.getMessage());
+		}
+	}
+
+	public void run() {
+		Log.print("start()");
+		while (status) {
+			if (socket.isClosed()) {
+				if (!ftf.save) {
+					Log.print("dispose receive the file");
+				} else {
+					Log.print("network stop or stop transfer file");
+					JOptionPane.showMessageDialog(jf,
+							"network stop or stop transfer file");
+				}
+				status = false;
+			} else if (ftf.save) {
+				receiveMessage();
+				close();
+			} else {
+				try {
+					sleep(100);
+				} catch (InterruptedException e) {
+					Log.print(e.getMessage());
+				}
+			}
+		}
+	}
+
+	public void receiveMessage() {
+		if (dis != null) {
+			try {
+				stateShow = new StateShow(jf);
+				stateShow.setTitle("Recevie File");
+				stateShow.setSize(350, 220);
+				Log.print("recevie file start....");
+				dos.writeInt(1);
+				dos.flush();
+				byte[] buf = new byte[1024];
+				int passedlen = 0;
+				String fileName = dis.readUTF();
+				long len = dis.readLong();
+				stateShow.fileNameLab.setText("File Name: " + fileName);
+				stateShow.fileSize.setText("File Size: " + (int) (len / 1024)
+						+ "KB");
+				stateShow.stateShow.setText("Start recevie the file...");
+
+				File recevieFile = new File("recevie/" + fileName);
+				dosFile = new DataOutputStream(new BufferedOutputStream(
+						new BufferedOutputStream(new FileOutputStream(
+								recevieFile))));
+
+				long startTime = System.currentTimeMillis();
+				while (true) {
+					int read = 0;
+					if (dis != null) {
+						read = dis.read(buf);
+					}
+					passedlen += read;
+					if (read == -1) {
+						break;
+					}
+					dosFile.write(buf, 0, read);
+					dosFile.flush();
+					float finish = ((float) passedlen) / len;
+					float percent = ((float) ((int) (finish * 10000))) / 100;
+					int value = (int) (finish * 100);
+					long nowTime = System.currentTimeMillis();
+					int netSpeed = (int) ((float) (passedlen / 1024) / ((nowTime - startTime) / 1000));
+
+					stateShow.jProgressBar.setValue(value);
+					stateShow.transferPercentShow.setText(percent + "%");
+					stateShow.networkSpeedShow.setText(netSpeed + "kb/s");
+					stateShow.spendTimeLab.setText("Spend Time: "
+							+ (int) (nowTime - startTime) / 1000 + "s");
+					stateShow.needTimeLab
+							.setText("Surplus Time: "
+									+ (int) ((len - passedlen) / 1024 / netSpeed)
+									+ "s");
+					if (passedlen == len) {
+						break;
+					}
+				}
+				Log.print("File recevie completed,decrypting....");
+				stateShow.stateShow
+						.setText("File recevie completed,decrypting....");
+				DecryptRecevieFile decryptRecevieFile = new DecryptRecevieFile(
+						recevieFile, ftf.getPublicKey(), ftf.getFileSavePath());
+				if (decryptRecevieFile.getEnFileByDes()) {
+					Log.print("Decrypt recevie file successfully");
+					stateShow.stateShow
+							.setText("Decrypt recevie file successfully");
+					dos.write(FileTransferFormat.FILE_TRANSFER_SUCCESS_MESSAGE
+							.getBytes());
+					dos.flush();
+				} else {
+					Log.print("decrypt recevie file failed");
+					stateShow.stateShow
+							.setText("Sorry,decrypt recevie file failed.");
+					dos.write(FileTransferFormat.FILE_TRANSFER_FAIL_MESSAGE
+							.getBytes());
+					dos.flush();
+				}
+			} catch (IOException e) {
+				stateShow.stateShow.setText("Sorry," + e.getMessage());
+				Log.print("������Ϣʧ��," + e.getMessage());
+			}
+		}
+		status = false;
+	}
+
+	public boolean goToVerfiy(File file) {
+		return true;
+	}
+
+	public void close() {
+		try {
+			dos.close();
+			dis.close();
+			dosFile.close();
+			socket.close();
+		} catch (Exception e) {
+			Log.print("close:" + e.getMessage());
+		}
+	}
+}

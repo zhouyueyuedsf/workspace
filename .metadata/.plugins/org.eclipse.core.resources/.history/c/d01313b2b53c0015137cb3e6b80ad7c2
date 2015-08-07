@@ -1,0 +1,9 @@
+package com.example.birthdaytree.config;
+
+public class BirthdaytreeConstant {
+	public final static String GET_CARD = "com.example.birthdaytree.GET_CARD";
+	public final static String GET_CLASS = "com.example.birthdaytree.GET_CLASS";
+	public final static String[] HOBBY = { "篮球", "足球", "排球", "书籍", "音乐", "编程",
+			"养花", };
+
+}

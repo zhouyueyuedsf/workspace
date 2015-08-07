@@ -40,7 +40,7 @@ public class SlideDateTimePicker
     public SlideDateTimePicker(FragmentManager fm)
     {
         // See if there are any DialogFragments from the FragmentManager
-        FragmentTransaction ft = fm.beginTransaction();
+        FragmentTransaction ft = fm.beginTransaction();//开启事务
         Fragment prev = fm.findFragmentByTag(SlideDateTimeDialogFragment.TAG_SLIDE_DATE_TIME_DIALOG_FRAGMENT);
 
         // Remove if found
@@ -167,7 +167,7 @@ public class SlideDateTimePicker
 
         if (mInitialDate == null)
         {
-            setInitialDate(new Date());
+            setInitialDate(new Date());//初始化时间
         }
 
         SlideDateTimeDialogFragment dialogFragment =

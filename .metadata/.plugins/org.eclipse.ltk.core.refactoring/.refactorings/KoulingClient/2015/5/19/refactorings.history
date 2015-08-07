@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Encrypt.java&apos; to &apos;QuadrantUnlock/src/com.example.quadrantunlock&apos;&#x0A;- Original project: &apos;KoulingClient&apos;&#x0A;- Destination element: &apos;QuadrantUnlock/src/com.example.quadrantunlock&apos;&#x0A;- Original element: &apos;com.example.koulingclient.Encrypt.java&apos;" description="Copy compilation unit" destination="=QuadrantUnlock/src&lt;com.example.quadrantunlock" element1="/src&lt;com.example.koulingclient{Encrypt.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1431071973615" units="1" version="1.0"/>
+</session>

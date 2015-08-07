@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">电力系统</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title">重庆大学自动化本科2011级05班陈锡杰</string>
+    <string name="Acurrent">A相电流ia:</string>
+    <string name="Avoltage">A相电压va:</string>
+    <string name="Bcurrent">B相电流ib:</string>
+    <string name="Bvoltage">B相电压vb:</string>
+    <string name="Ccurrent">C相电流ic:</string>
+    <string name="Cvoltage">C相电压vc:</string>
+    <string name="power_factor">功率因数:</string>
+    <string name="active_power">有功功率:</string>
+    <string name="reactive_power">无功功率:</string>
+    <string name="brake_control">闸位控制</string>
+    <string name="iphint">请输入ip地址</string>
+    <string name="iplabal">主机IP：</string>
+    <string name="sockethint">请输入端口号</string>
+    <string name="socketlabel">端口值：</string>
+    <string name="connectButton">点击连接</string>
+</resources>

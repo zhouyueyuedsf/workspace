@@ -4,11 +4,18 @@ import java.io.FileNotFoundException;
 
 import com.example.birthdaytree.base.DbOperation;
 import com.example.birthdaytree.bean.Person;
+import com.example.birthdaytree.datepicker.DatePicker;
+import com.example.birthdaytree.dialog.CommonAlertDialogs;
+import com.example.birthdaytree.dialog.CommonDialogs;
+import com.example.birthdaytree.dialog.CommonDialogs.ClickListenerInterface;
+import com.example.birthdaytree.edittext.DefEdittext;
+import com.example.birthdaytree.test.LightThemeActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -22,7 +29,10 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -30,18 +40,20 @@ import android.widget.TextView;
 
 public class AddPersonBirthday extends BaseActivity implements OnClickListener,OnCheckedChangeListener{
 	public ImageView GuestHeadImage;
-	public LineEditText GuestName,GuestHobby,GuestOther,GuestBirthday;
-	public RadioGroup GuestSex;
+	public DefEdittext GuestName,GuestHobby,GuestOther;
+	TextView GuestBirthday;
+	public TextView GuestSex;
 	public TextView back,save;
 	public Bitmap bmp;
 	public DbOperation dbOperation;
 	Person person;
+	int item;
 	private String sSex = "男";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
+		
 	}
 
 	@Override
@@ -56,11 +68,10 @@ public class AddPersonBirthday extends BaseActivity implements OnClickListener,O
 	public void initViews() {
 		// TODO Auto-generated method stub
 		GuestHeadImage = (ImageView)this.findViewById(R.id.GuestHeadImage);
-		GuestName = (LineEditText)this.findViewById(R.id.GuestName);
-		GuestHobby = (LineEditText)this.findViewById(R.id.GuestHobby);
-		GuestOther = (LineEditText)this.findViewById(R.id.GuestOther);
-		GuestBirthday = (LineEditText)this.findViewById(R.id.GuestBirthday);
-		GuestSex = (RadioGroup)this.findViewById(R.id.GuestSex);
+		GuestName = (DefEdittext)this.findViewById(R.id.GuestName);
+		GuestHobby = (DefEdittext)this.findViewById(R.id.GuestHobby);
+		GuestSex = (TextView)this.findViewById(R.id.GuestSex);
+		GuestBirthday = (TextView)this.findViewById(R.id.GuestBirthday);
 		back = (TextView)this.findViewById(R.id.back);
 		save = (TextView)this.findViewById(R.id.save);
 	}
@@ -70,16 +81,20 @@ public class AddPersonBirthday extends BaseActivity implements OnClickListener,O
 		// TODO Auto-generated method stub
 		back.setOnClickListener(this);
 		save.setOnClickListener(this);
-		GuestSex.setOnCheckedChangeListener(this);
+		GuestSex.setOnClickListener(this);
 		GuestHeadImage.setOnClickListener(this);
+		GuestBirthday.setOnClickListener(this);
 	}
 
 	@Override
 	public void initData() {
 		// TODO Auto-generated method stub
 		 person = new Person();
-			Log.v("DbOperation", "----->");
-		dbOperation = new DbOperation(AddPersonBirthday.this, "birthdayTree.db");
+		 dbOperation = new DbOperation(AddPersonBirthday.this, "birthdayTree.db");		
+		GuestName.setLeftImage(R.drawable.username);
+		GuestName.setAppearText("请输入姓名");
+		GuestHobby.setAppearText("请写下你的爱好");
+		GuestHobby.setLeftImage(R.drawable.aihao);
 		Log.v("DbOperation", "----->");
 	}
 
@@ -90,36 +105,96 @@ public class AddPersonBirthday extends BaseActivity implements OnClickListener,O
 		case R.id.back:
 			Back(AddPersonBirthday.this,MainActivity.class);
 			break;
-
+		case R.id.GuestBirthday:
+			final CommonDialogs dialog = new CommonDialogs(AddPersonBirthday.this, R.style.AiTheme_Light,"请选择生日","确定","关闭");
+			dialog.show();
+			dialog.setClicklistener(new ClickListenerInterface() {	
+				@Override
+				public void doCancel() {
+					// TODO Auto-generated method stub
+					dialog.dismiss();
+				}
+				@Override
+				public void doConfirm(DatePicker datePicker) {
+					// TODO Auto-generated method stub
+					GuestBirthday.setText(datePicker.getDate());
+					dialog.dismiss();
+				}
+			});
+			break;
 		case R.id.save:
-			if(TextUtils.isEmpty(GuestName.getText())||TextUtils.isEmpty(GuestBirthday.getText())){
+			if(TextUtils.isEmpty(GuestName.getContent())||TextUtils.isEmpty(GuestBirthday.getText())){
 				ShowToast("你的生日或名字没填写不能保存");
 			}else{
 				Intent intent = getIntent();
 				String flag = (String) intent.getSerializableExtra("class");
-				if(flag.equals("friends")){
-					person.setName(GuestName.getText().toString().trim());
+					person.setName(GuestName.getContent().toString().trim());
 					person.setDate(GuestBirthday.getText().toString().trim());
 					person.setSex(sSex);
-					if(!TextUtils.isEmpty(GuestHobby.getText())){
-						person.setHobby(GuestHobby.getText().toString().trim());
+					if(!TextUtils.isEmpty(GuestHobby.getContent())){
+						person.setHobby(GuestHobby.getContent().toString().trim());
 					}
 					if(GuestHeadImage!=null){
 						Bitmap image = ((BitmapDrawable)GuestHeadImage.getDrawable()).getBitmap();
 						person.setHeadImage(image);
 					}
 					
-					dbOperation.insertData(person, "friends");
+					dbOperation.insertData(person, flag);
 					ShowToast("添加生日成功");
 					
-				}
 			}
 			break;
+		case R.id.GuestSex:
+			showCommonDialog2(AddPersonBirthday.this);
 			
+			break;
 		case R.id.GuestHeadImage:
 			uploadImage();
 			break;
 		}
+	}
+	public  void showCommonDialog2(Context context) {
+		 final String[] items = new String[] { "男", "女" }; 
+		
+       new AlertDialog.Builder(context). 
+              setTitle("选择性别").
+              setIcon(R.drawable.ic_launcher) 
+              .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() { 
+
+                  @Override 
+                  public void onClick(DialogInterface dialog, int which) { 
+                	  item = which;
+                  } 
+              }). 
+              setPositiveButton("确认", new DialogInterface.OnClickListener() { 
+
+                  @Override 
+                  public void onClick(DialogInterface dialog, int which) { 
+                  	 sSex = "";
+                  	switch (item) {
+                  	case 0:
+                  		sSex = "男";
+                  		break;
+						case 1:
+						sSex = "女";
+							
+						break;
+					}   
+                  	GuestSex.setText(sSex);
+                 } 
+              }). 
+              setNegativeButton("取消", new DialogInterface.OnClickListener() { 
+
+                  @Override 
+                  public void onClick(DialogInterface dialog, int which) { 
+                      // TODO Auto-generated method stub  
+                  } 
+              }). 
+              create().show(); 
+	
+		
+	
+		
 	}
 
 	@Override

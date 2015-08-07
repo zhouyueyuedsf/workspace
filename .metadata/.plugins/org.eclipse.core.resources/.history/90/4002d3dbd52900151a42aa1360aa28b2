@@ -1,0 +1,78 @@
+package com.imooc.tab04;
+
+import java.util.Date;
+import java.util.Queue;
+
+import org.achartengine.ChartFactory;
+import org.achartengine.GraphicalView;
+import org.achartengine.chart.PointStyle;
+import org.achartengine.model.TimeSeries;
+import org.achartengine.model.XYMultipleSeriesDataset;
+import org.achartengine.model.XYSeries;
+import org.achartengine.renderer.XYMultipleSeriesRenderer;
+import org.achartengine.renderer.XYSeriesRenderer;
+
+import android.content.Context;
+import android.graphics.Color;
+
+public class ChartUtil {
+	private GraphicalView graphicalView;
+	private XYMultipleSeriesDataset xyMultipleSeriesDataset;
+	private XYMultipleSeriesRenderer xyMultipleSeriesRenderer;
+	private TimeSeries timeSeries;
+	private XYSeriesRenderer xySeriesRenderer;
+	private Context context;
+
+	public ChartUtil(){
+		
+	}
+	public ChartUtil(Context context) {
+		this.context = context;
+		
+		
+	}
+
+	/**
+	 * 获取图表
+	 * 
+	 * @return
+	 */
+	public GraphicalView getGraphicalView() {
+		graphicalView = ChartFactory.getTimeChartView(context, xyMultipleSeriesDataset,xyMultipleSeriesRenderer, "HH:mm");
+		return graphicalView;
+	}
+	
+	public void createDataSet(Queue<Date> x,Queue<Double> y){
+		timeSeries = new TimeSeries("IO");
+		xyMultipleSeriesDataset = new XYMultipleSeriesDataset();
+		for(int i =0; i<x.size();i++){
+			timeSeries.add(x.poll(), y.poll());
+		}
+		xyMultipleSeriesDataset.addSeries(timeSeries);		
+	}
+	public void updateView(Queue<Date> x,Queue<Double> y){
+		timeSeries = new TimeSeries("IO");
+		xyMultipleSeriesDataset = new XYMultipleSeriesDataset();
+		for(int i =0; i<x.size();i++){
+			timeSeries.add(x.poll(), y.poll());
+		}
+		xyMultipleSeriesDataset.addSeries(timeSeries);
+		graphicalView.repaint();
+	}
+	public void setXYRenderer(Double maxX, Double maxY, String chartTitle, String xTitle, String yTitle){
+		xyMultipleSeriesRenderer = new XYMultipleSeriesRenderer();
+		xyMultipleSeriesRenderer.setRange(new double[]{0,maxX,0,maxY});
+		if(chartTitle!=null){
+			xyMultipleSeriesRenderer.setChartTitle(chartTitle);
+		}
+		xyMultipleSeriesRenderer.setXLabels(60);
+		xyMultipleSeriesRenderer.setYLabelsAngle(10);
+		xyMultipleSeriesRenderer.setXTitle(xTitle);
+		xyMultipleSeriesRenderer.setYTitle(yTitle);
+		 xySeriesRenderer = new XYSeriesRenderer();
+		 xySeriesRenderer.setColor(Color.RED);
+		 xySeriesRenderer.setPointStyle(PointStyle.CIRCLE);
+		 xyMultipleSeriesRenderer.addSeriesRenderer(xySeriesRenderer);
+	}
+	
+}

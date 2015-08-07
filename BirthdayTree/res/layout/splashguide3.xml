@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-      android:background="@drawable/slpash_ui_03"
+    android:background="@drawable/slpash_ui_03"
      >
-
-    <ImageView
+	<FrameLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="3"
+	    ></FrameLayout>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    android:orientation="horizontal"
+	    android:gravity="center"
+	    >   
+	   <ImageView
         android:id="@+id/headImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="126dp"
-        android:src="@android:drawable/ic_menu_gallery" />
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="30dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/head_image" />
+	</LinearLayout>
+	<FrameLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="0.15"
+	    ></FrameLayout>
 
-</RelativeLayout>
+</LinearLayout>

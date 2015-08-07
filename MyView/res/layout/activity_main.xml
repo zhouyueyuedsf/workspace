@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:droidicon="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gridView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+
+>
+	
+    <com.gc.materialdesign.icon.DroidiconBadge
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		droidicon:db_icon="fa-user"
+		droidicon:db_icon_color="#ADFF2F"
+        />
+        <!-- <com.gc.materialdesign.views.CheckableButton
+            android:layout_width="88dp"
+            android:layout_height="32dp"
+            android:text="衣物"
+            android:background="@drawable/select"
+            android:textSize="14sp" />
+
+       <com.gc.materialdesign.views.CheckableButton
+            android:layout_width="88dp"
+            android:layout_height="32dp"
+            android:text="帽子"
+            android:background="@drawable/select"
+            android:textSize="14sp" /> -->
+         
+
+</LinearLayout>
+

@@ -1,0 +1,477 @@
+package com.example.birthdaytree;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import org.apache.http.message.BasicNameValuePair;
+
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.listener.SaveListener;
+
+import com.example.birthdaytree.adapter.ViewPagerAdapter;
+import com.example.birthdaytree.base.DbHelper;
+import com.example.birthdaytree.base.DbOperation;
+import com.example.birthdaytree.bean.BmobPerson;
+import com.example.birthdaytree.bean.Person;
+import com.example.birthdaytree.config.BirthdaytreeConstant;
+import com.example.birthdaytree.datepicker.DatePicker;
+import com.example.birthdaytree.dialog.CommonDialogs;
+import com.example.birthdaytree.dialog.CommonDialogs.ClickListenerInterface;
+import com.example.birthdaytree.thread.PostThread;
+import com.example.birthdaytree.util.BitmapUtil;
+import com.example.birthdaytree.util.CheckNet;
+import com.example.birthdaytree.util.Encrypt;
+import com.example.birthdaytree.util.FileUtil;
+import com.example.birthdaytree.util.HttpEngineLite;
+import com.gc.materialdesign.views.ButtonFlat;
+import com.gc.materialdesign.views.FlowLayout;
+import com.gc.materialdesign.views.RadioButton;
+import com.gc.materialdesign.views.RadioGroup;
+import com.gc.materialdesign.views.RadioGroup.OnCheckedChangeListener;
+import com.gc.materialdesign.widgets.Dialog;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.provider.MediaStore;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class SplashActivity extends BaseActivity implements OnClickListener,
+		OnCheckedChangeListener {
+	private View view1, view2, view3, view4;
+	private LineEditText name;
+	private FlowLayout hobby;
+	private TextView birthday;
+	private RadioGroup sex;
+	private RadioButton man, woman;
+	private String sSex = "男";
+	private FrameLayout next, last;
+	private ImageView headImage;// 头像
+	private List<ImageView> lasts;
+	private List<View> views;
+	private NoScrollViewPager viewPager;
+	private List<ImageView> points;
+	private int currPos = 0;
+	private Boolean isFirst;// 是否是第一次登录
+	private Boolean isHaveImage = false;// 是否已经设置头像
+	DbOperation dbOperation;
+	private Person person;
+	SharedPreferences setting;
+	private DatePicker datePicker;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		Bmob.initialize(this, "bf792322e90bf31ac7c1131578207f8a");
+	}
+
+	@Override
+	public void setContentView() {
+		// 用SharedPreferences存储是否第一次登录的标识
+		setting = getSharedPreferences("setting", 0);
+		if (!(isFirst = setting.getBoolean("isFirst", true))) {
+			// setContentView(R.layout.splash_main);
+			Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+			startActivity(intent);
+		} else {
+			setContentView(R.layout.splash_main);// 如果不是就进入初始化界面
+		}
+
+	}
+
+	@Override
+	public void initViews() {
+		if ((isFirst = setting.getBoolean("isFirst", true))) {
+			viewPager = (NoScrollViewPager) this.findViewById(R.id.viewpager);
+			viewPager.setNoScroll(true);
+			points = new ArrayList<ImageView>();
+			points.add((ImageView) this.findViewById(R.id.point1));
+			points.add((ImageView) this.findViewById(R.id.point2));
+			points.add((ImageView) this.findViewById(R.id.point3));
+			points.add((ImageView) this.findViewById(R.id.point4));
+
+			next = (FrameLayout) this.findViewById(R.id.next);
+			last = (FrameLayout) this.findViewById(R.id.last);
+
+			points.get(0).setBackgroundResource(R.drawable.point_true);
+			points.get(1).setBackgroundResource(R.drawable.point_false);
+			points.get(2).setBackgroundResource(R.drawable.point_false);
+			points.get(3).setBackgroundResource(R.drawable.point_false);
+			LayoutInflater inflater = getLayoutInflater().from(this);
+
+			view1 = inflater.inflate(R.layout.splashguide1, null);
+			view2 = inflater.inflate(R.layout.splashguide2, null);
+			view3 = inflater.inflate(R.layout.splashguide3, null);
+			view4 = inflater.inflate(R.layout.splashguide4, null);
+			views = new ArrayList<View>();
+			views.add(view1);
+			views.add(view2);
+			views.add(view3);
+			views.add(view4);
+
+			name = (LineEditText) view1.findViewById(R.id.name);
+			birthday = (TextView) view1.findViewById(R.id.birthday);
+			sex = (RadioGroup) view2.findViewById(R.id.sex);
+			hobby = (FlowLayout) view2.findViewById(R.id.hobby);
+			man = (RadioButton) view2.findViewById(R.id.man);
+			woman = (RadioButton) view2.findViewById(R.id.woman);
+			headImage = (ImageView) view3.findViewById(R.id.headImage);
+			last.setVisibility(View.GONE);
+		}
+
+	}
+
+	@Override
+	public void initListeners() {
+		// TODO Auto-generated method stub
+
+		if ((isFirst = setting.getBoolean("isFirst", true))) {
+			ViewPagerAdapter adapter = new ViewPagerAdapter(views);
+			viewPager.setAdapter(adapter);
+			viewPager.setCurrentItem(currPos);
+			Log.v("initListeners", "---->");
+			birthday.setOnClickListener(this);
+			sex.setOnCheckedChangeListener(this);
+			headImage.setOnClickListener(this);
+			hobby.setOnClickListener(this);
+			next.setOnClickListener(this);
+			last.setOnClickListener(this);
+		}
+
+	}
+
+	@Override
+	public void initData() {
+		// alter by zhouyueyue
+		dbOperation = new DbOperation(SplashActivity.this, "birthdayTree.db");
+		person = new Person();
+		// man.setChecked(true);//设置默认选项
+	}
+
+	@Override
+	public void onClick(View v) {
+		int id = v.getId();
+		int position = viewPager.getCurrentItem();
+		switch (id) {
+		case R.id.birthday:
+			final CommonDialogs dialog = new CommonDialogs(SplashActivity.this,
+					R.style.AiTheme_Light, "请选择生日", "确定", "关闭");
+			dialog.setClicklistener(new ClickListenerInterface() {
+				@Override
+				public void doConfirm(DatePicker datePicker) {
+					birthday.setText(datePicker.getDate());
+					dialog.dismiss();
+				}
+
+				@Override
+				public void doCancel() {
+					dialog.dismiss();
+				}
+			});
+			dialog.show();
+			break;
+		case R.id.next:
+			switch (position) {
+			case 0:
+			 if (TextUtils.isEmpty(name.getText())
+						|| TextUtils.isEmpty(birthday.getText())) {
+					ShowToast("亲,你的名字或生日未设置哦");
+					// next(position);
+				} else {
+					person.setName(name.getText().toString().trim());
+					person.setDate(birthday.getText().toString().trim());
+					next(position + 1);
+					last.setVisibility(View.VISIBLE);
+				}
+				break;
+			// 点击第二张页面的前进图标后
+			case 1:
+//				if (TextUtils.isEmpty(hobby.getText())
+//						|| sex.isClickable()) {
+//					ShowToast("亲,你的性别和爱好未设置哦");
+//					// next(position);
+//				} else {
+					person.setSex(sSex);
+//					person.setHobby(hobby.getText().toString());
+					next(position + 1);
+					// 加载未设置的图片用一个isHaveImage标识
+					last.setVisibility(View.VISIBLE);
+//				}
+
+				break;
+			// 添加头像,头像可以不设置
+			case 2:
+					next(position + 1);
+					last.setVisibility(View.VISIBLE);
+				break;
+			// 完成
+			case 3:
+					//chatId就在这里形成
+					String s = person.getName() + person.getDate()
+							+ person.getSex() + person.getHobby()+System.currentTimeMillis()+"";
+					String chatId = Encrypt.MD5(s);// 形成唯一的chatId
+					person.setChatId(chatId);
+					last.setVisibility(View.VISIBLE);
+					this.finish();
+				break;
+			}
+
+			break;
+		case R.id.last:
+			if (viewPager.getCurrentItem() == 1) {
+				next(position - 1);
+				last.setVisibility(View.GONE);
+			} else {
+				next(position - 1);
+			}
+
+			break;
+			
+		case R.id.hobby:
+			Intent intent = new Intent(SplashActivity.this, SelectFlow.class);
+			startActivity(intent);
+			break;
+		case R.id.headImage:			
+			uploadImage();
+			break;
+		}
+		
+		
+
+	}
+	public void finish(){
+		dbOperation.insertData(person, "user");
+		SharedPreferences settings = getSharedPreferences(
+				"setting", 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putBoolean("isFirst", false);
+		editor.commit();
+		Intent intent = new Intent(SplashActivity.this,
+				MainActivity.class);
+		startActivity(intent);
+	}
+	@SuppressWarnings("unused")
+	private void BmobPost(final String chatId) {
+		// TODO Auto-generated method stub
+
+		BmobPerson bmobPerson = new BmobPerson();
+		bmobPerson.setChatId(person.getChatId());
+		bmobPerson.setName(person.getName());
+		bmobPerson.setDate(person.getDate());
+		bmobPerson.setSex(person.getSex());
+		bmobPerson.setHobby(person.getHobby());
+		bmobPerson.setHeadImage(person.getHeadImage());
+
+		bmobPerson.save(SplashActivity.this, new SaveListener() {
+
+			@Override
+			public void onSuccess() {
+				// TODO Auto-generated method stub
+				// 添加成功一个chatId就必须要在远程数据库中,而bmob不支持这样的创建
+				// 此处的逻辑得细化,因为有两个服务器不好操作
+				Handler handler = new Handler() {
+					@Override
+					public void handleMessage(Message msg) {
+						// TODO Auto-generated method stub
+						if (msg.arg1 == 0) {
+							ShowToast("添加本人数据到服务器成功");
+							dbOperation.insertData(person, "user");
+							SharedPreferences settings = getSharedPreferences(
+									"setting", 0);
+							SharedPreferences.Editor editor = settings.edit();
+							editor.putBoolean("isFirst", false);
+							editor.commit();
+							Intent intent = new Intent(SplashActivity.this,
+									MainActivity.class);
+							startActivity(intent);
+						} else {
+							ShowToast("不能连接到服务器");
+						}
+					}
+				};
+				post(handler);
+			}
+
+			private void post(Handler handler) {
+				// TODO Auto-generated method stub
+				String url = "http://10.0.2.2/xampp/site/birthdayTree/add.php";
+				PostThread postThread = new PostThread(url, chatId, handler);
+				postThread.start();
+
+			}
+
+			@Override
+			public void onFailure(int arg0, String arg1) {
+				// TODO Auto-generated method stub
+				ShowToast("添加失败,请确认联网");
+
+			}
+		});
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (resultCode == RESULT_OK) {
+			Bitmap bmp = null;
+			// getIntent().getData();
+			switch (requestCode) {
+			case BirthdaytreeConstant.CAMERA:
+				Bundle bundle = data.getExtras();
+				if (bundle != null) {
+					bmp = BitmapUtil.toRoundBitmap( BitmapUtil.compress((Bitmap) bundle.get("data")));// 这种方法得到的是缩略图	
+				}			
+				break;
+
+			case BirthdaytreeConstant.ABLUM:
+				break;
+			}
+			if(requestCode == BirthdaytreeConstant.CAMERA){
+				Bundle bundle = data.getExtras();
+				if (bundle != null) {
+					bmp = BitmapUtil.toRoundBitmap( BitmapUtil.compress((Bitmap) bundle.get("data")));// 这种方法得到的是缩略图	
+				}
+			}else{
+				Uri uri = data.getData();// 得到选择的uri
+				ContentResolver cr = this.getContentResolver();
+				if (uri != null) {
+					String uriStr = uri.getPath();
+					try {
+						//这里出现的oom真是让人急死了,用三星手机更是如此,去配置文件看一下就知道了
+						bmp = BitmapUtil.toRoundBitmap(BitmapUtil.safeDecodeStream(cr
+										.openInputStream(uri),100,100));
+					} catch (FileNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				if (bmp == null) {
+					Bundle bundle = data.getExtras();
+					if (bundle != null) {
+						bmp =BitmapUtil.toRoundBitmap( BitmapUtil.compress((Bitmap) bundle.get("data")));// 这种方法得到的是缩略图	
+					}
+				}
+			}	
+			headImage.setImageBitmap(bmp);
+			person.setHeadImage(bmp);
+//			BitmapUtil.BitmapRecyle(bmp);
+		} else {
+			Toast.makeText(this, "选择图片失败,请重新选择", Toast.LENGTH_SHORT).show();
+		}
+//		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	public void uploadImage() {
+		final Dialog dialog = new Dialog(SplashActivity.this, "选择图片来源");
+		CharSequence[] items = { "相册", "相机" };
+		dialog.setItems(items, new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View v,
+					int which, long l) {
+				if (which == 1) {
+					Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+					//Uri imageFileUri = FileUtil.getOutFileUri(1);
+					//intent.putExtra(MediaStore.EXTRA_OUTPUT, imageFileUri);
+					startActivityForResult(intent, BirthdaytreeConstant.CAMERA);
+				} else {
+					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+					intent.addCategory(Intent.CATEGORY_OPENABLE);
+					intent.setType("image/*");
+					intent.putExtra("return-data", true);
+					startActivityForResult(intent, BirthdaytreeConstant.ABLUM);
+				}
+			}
+		}).addCancelButton("关闭");
+		dialog.show();
+		//
+		// AlertDialog dialog = new AlertDialog.Builder(this)
+		// .setTitle("选择图片来源")
+		// .setItems(items, new DialogInterface.OnClickListener() {
+		// @Override
+		// public void onClick(DialogInterface dialog, int which) {
+		// // TODO Auto-generated method stub
+		// if (which == 1) {
+		// Intent intent = new Intent(
+		// MediaStore.ACTION_IMAGE_CAPTURE);
+		// startActivityForResult(intent, 1);
+		//
+		// } else {
+		//
+		// Intent intent = new Intent(
+		// Intent.ACTION_GET_CONTENT);
+		// intent.addCategory(Intent.CATEGORY_OPENABLE);
+		// intent.setType("image/*");
+		// intent.putExtra("return-data", true);
+		// startActivityForResult(intent, 2);
+		// }
+		// }
+		// })
+		// .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+		//
+		// @Override
+		// public void onClick(DialogInterface dialog, int which) {
+		// // TODO Auto-generated method stub
+		// dialog.cancel();
+		//
+		// }
+		// }).create();
+		// dialog.show();
+	}
+
+	private void next(int position) {
+		// TODO Auto-generated method stub
+		viewPager.setCurrentItem(position);
+		setbg(position);
+	}
+
+	private void setbg(int currPos) {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < 4; i++) {
+			if (i == currPos) {
+				points.get(i).setBackgroundResource(R.drawable.point_true);
+			} else {
+				points.get(i).setBackgroundResource(R.drawable.point_false);
+			}
+		}
+
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+	@Override
+	public void onCheckedChanged(RadioGroup group, int checkedId) {
+			
+	}
+
+}

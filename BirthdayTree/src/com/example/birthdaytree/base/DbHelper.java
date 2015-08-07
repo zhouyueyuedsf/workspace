@@ -7,17 +7,19 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DbHelper extends SQLiteOpenHelper {
-	String CREAT_TABLE_USER = "create table user (_id integer primary key autoincrement,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
-	String CREAT_TABLE_PARENTS = "create table parents (_id integer primary key autoincrement,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
-	String CREAT_TABLE_FRIENDS = "create table friends (_id integer primary key autoincrement,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
-	String CREAT_TABLE_CLASSMATES = "create table classmates (_id integer primary key autoincrement,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
-	String CREAT_TABLE_COLLEAGUE = "create table colleague (_id integer primary key autoincrement,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
-	String CREAT_TABLE_ELDERS = "create table elders (_id integer primary key autoincrement,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
-	String CREAT_TABLE_LOVER = "create table lover (_id integer primary key autoincrement,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
+	String CREAT_TABLE_USER = "create table user (_id integer not null primary key autoincrement,chatId char(10),name text,date char(100),sex char(2),hobby text,user_image BLOB)";
+	String CREAT_TABLE_PARENTS = "create table parents (_id integer not null primary key autoincrement,chatId char(10) NULL,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
+	String CREAT_TABLE_FRIENDS = "create table friends (_id integer not null primary key autoincrement,chatId char(10) NULL,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
+	String CREAT_TABLE_CLASSMATES = "create table classmates (_id integer not null primary key autoincrement,chatId char(10) NULL,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
+	String CREAT_TABLE_COLLEAGUE = "create table colleague (_id integer not null primary key autoincrement,chatId char(10) NULL,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
+	String CREAT_TABLE_ELDERS = "create table elders (_id integer not null primary key autoincrement,chatId char(10) NULL,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
+	String CREAT_TABLE_LOVER = "create table lover (_id integer not null primary key autoincrement,chatId char(10) NULL,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
+	String CREAT_TABLE_BROTHERS = "create table brothers (_id integer not null primary key autoincrement,chatId char(10) NULL,name text,date char(100),sex char(2),hobby text,user_image BLOB)";
+	
+	private int version;
 	public DbHelper(Context context, String name, int version) {
 		super(context, name, null, version);
-		// TODO Auto-generated constructor stub
-		
+		this.setVersion(version);
 	}
    //第一次使用初始化数据库时创建
 	@Override
@@ -44,6 +46,12 @@ public class DbHelper extends SQLiteOpenHelper {
 		db.execSQL(CREAT_TABLE_COLLEAGUE);
 		db.execSQL(CREAT_TABLE_ELDERS);
 		db.execSQL(CREAT_TABLE_LOVER);
+	}
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 }

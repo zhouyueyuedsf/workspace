@@ -39,7 +39,7 @@ public class MainActivity extends FragmentActivity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				//建造者模式
 				new SlideDateTimePicker.Builder(getSupportFragmentManager())
 						.setListener(listener).setInitialDate(new Date())
 						.build().show();
@@ -49,8 +49,7 @@ public class MainActivity extends FragmentActivity {
 
 			@Override
 			public void onDateTimeSet(Date date) {
-				// TODO Auto-generated method stub
-//				birthday.setText(mFormatter.format(date));
+				birthday.setText(mFormatter.format(date));
 //				Intent intent = new Intent(MainActivity.this,
 //						AlarmActivity.class);
 //				PendingIntent pi = PendingIntent.getActivity(MainActivity.this,

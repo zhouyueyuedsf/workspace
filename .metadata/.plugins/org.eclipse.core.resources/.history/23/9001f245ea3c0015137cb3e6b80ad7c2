@@ -1,0 +1,123 @@
+package com.example.birthdaytree;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import com.example.birthdaytree.config.BirthdaytreeConstant;
+import com.example.birthdaytree.util.JsonUtil;
+import com.gc.materialdesign.icon.DroidiconBadge;
+import com.gc.materialdesign.views.CheckableButton;
+import com.gc.materialdesign.views.FlowLayout;
+import com.gc.materialdesign.widgets.Dialog;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class SelectFlow extends BaseActivity implements OnClickListener{
+
+	private String[] hobbys = { "篮球", "足球", "排球", "羽毛球", "享受书籍", "音乐",
+		"爱编程", "爱养花", "赏电影", "艺术", "玩手机", "看新闻", "爱时尚", "游戏达人", "登山健将", "爱旅游",
+		"单反达人", "品茶", "爱逛街", "社交", "+"};
+	FlowLayout mFlowLayout;
+	CheckableButton mCb;
+	CheckableButton mLastCb;
+	DroidiconBadge mClose,mSure;
+	CheckableButton mAdd;
+	List<String> mLists = new LinkedList<String>();
+	
+	LayoutInflater mInflater;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
+	public void updateData(){
+		for(int i = 0; i < mLists.size()-1; i++){
+			mCb = (CheckableButton) mInflater.inflate(
+					R.layout.checkable_button, mFlowLayout, false);
+			mCb.setText(mLists.get(i));
+			mFlowLayout.addView(mCb);
+		}	
+	}
+	public void initData() {	
+		for (int i = 0; i < hobbys.length; i++) {
+			mCb = (CheckableButton) mInflater.inflate(
+					R.layout.checkable_button, mFlowLayout, false);
+			mCb.setText(hobbys[i]);
+			mLists.add(hobbys[i]);
+			mFlowLayout.addView(mCb);	
+		}
+		mLastCb = (CheckableButton)mFlowLayout.getChildAt(hobbys.length-1);
+		mLastCb.setBackgroundResource(R.drawable.checkable_default_border);
+		mLastCb.setTextSize(20f);
+		mLastCb.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Dialog dialog = new Dialog(SelectFlow.this, "自定义爱好");
+				final LineEditText lineEditText = new LineEditText(SelectFlow.this);
+				dialog.setOnAcceptButtonClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						mCb = (CheckableButton) mInflater.inflate(
+								R.layout.checkable_button, mFlowLayout, false);
+						String s = lineEditText.getText().toString().trim();
+						mCb.setText(lineEditText.getText().toString().trim());
+						mLists.add(mLists.size()-2, s);
+					}
+				});
+				dialog.addCancelButton("关闭");
+				dialog.setView(lineEditText).show();				
+			}
+		});
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.sure_hobby_select:
+//			for(int i = 0; i < hobbys.length; i++){
+//				CheckableButton cb = (CheckableButton)mFlowLayout.getChildAt(i);
+//				if(cb.isChecked()){
+//					mLists.add(hobbys[i]);
+//				};	
+//			}
+			break;
+
+		case R.id.close_hobby_select:
+			this.finish();
+			break;
+		}
+	}
+
+	@Override
+	public void setContentView() {
+		// TODO Auto-generated method stub
+		setContentView(R.layout.hobby_select);
+	}
+
+	@Override
+	public void initViews() {
+		mInflater = LayoutInflater.from(this);
+		mFlowLayout = (FlowLayout) this
+				.findViewById(R.id.hobby_select_flowlayout);	
+		mClose = (DroidiconBadge) this
+				.findViewById(R.id.close_hobby_select);
+		mSure = (DroidiconBadge) this
+				.findViewById(R.id.sure_hobby_select);
+
+	}
+
+	@Override
+	public void initListeners() {
+		mClose.setOnClickListener(this);
+		mSure.setOnClickListener(this);
+	}
+}

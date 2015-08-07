@@ -2,13 +2,19 @@ package com.example.birthdaytree;
 
 import java.io.Serializable;
 
+
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -23,7 +29,7 @@ public abstract class BaseActivity extends Activity {
 
 	protected int mScreenWidth;//��Ļ���	
 	protected int mScreenHeight;//��Ļ�߶�
-	
+	int item = 0;
 	public static final String TAG = "bmob";
 
 	@Override
@@ -84,5 +90,17 @@ public abstract class BaseActivity extends Activity {
 		Intent intent = new Intent(res,des);
 		intent.putExtras(bundle);
 		startActivity(intent);
+	}
+
+	public boolean isNet(){
+		ConnectivityManager con=(ConnectivityManager)getSystemService(Activity.CONNECTIVITY_SERVICE);  
+		  NetworkInfo mWiFiNetworkInfo =con.getNetworkInfo(ConnectivityManager.TYPE_WIFI); 
+		boolean internet=con.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting();  
+		if((mWiFiNetworkInfo != null&&mWiFiNetworkInfo.isAvailable())|internet){  
+		    //执行相关操作  
+			return true;
+		}else{  
+		 return false;
+		}  
 	}
 }

@@ -40,144 +40,101 @@
         android:layout_gravity="center_horizontal"
         android:src="@android:drawable/ic_menu_gallery" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+   <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" 
-        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
         android:layout_marginTop="30dp"
+        android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="40dp"
+            
+            android:layout_marginRight="40dp"
         >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/name" />
 
-        <com.example.birthdaytree.LineEditText
+        <com.example.birthdaytree.edittext.DefEdittext
             android:id="@+id/GuestName"
-            style="?android:attr/textViewStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:ems="10" 
-            android:inputType="text"
-            android:layout_marginLeft="10dp">
-        </com.example.birthdaytree.LineEditText>
+            >
+        </com.example.birthdaytree.edittext.DefEdittext>
     </LinearLayout>
     
      <LinearLayout
-        android:layout_width="wrap_content"
+        
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+          android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+         android:layout_marginLeft="40dp"
+       android:layout_marginRight="40dp"
+       android:layout_marginTop="10dp"
         >
 
-        <TextView
-            android:id="@+id/id1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/birthday" />
+        <ImageView
+           android:layout_width="30dp"
+           android:layout_height="25dp"
+           android:background="@drawable/dangao"
+            />
 
-        <com.example.birthdaytree.LineEditText
-             android:id="@+id/GuestBirthday"
-            style="?android:attr/textViewStyle"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/GuestBirthday"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:ems="10" 
-            android:inputType="text"
-            android:layout_marginLeft="10dp">
-        </com.example.birthdaytree.LineEditText>
+            android:layout_weight="0.7"
+            android:clickable="true"
+            android:layout_marginLeft="30dp"
+            android:hint="@string/set_birthday" />
+
     </LinearLayout>
      <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" 
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="30dp"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sex" 
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
             
-         />
+        >
 
-      <RadioGroup 
-           android:id="@+id/GuestSex"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal"
-          android:paddingRight="60dp"
-          android:layout_marginLeft="20dp"
-          
-          >
-          <RadioButton 
-               android:id="@+id/GuestMan"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="@string/man"
-              android:textColor="#000000"
-              android:checked="true"
-              />
-           <RadioButton 
-              android:id="@+id/GuestWoman"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="@string/woman"
-              android:textColor="#000000"
-              />
-      </RadioGroup>
+    <ImageView 
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:src="@drawable/sex"
+        />
+	
+        <TextView
+            android:id="@+id/GuestSex"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:clickable="true"
+            android:layout_marginLeft="30dp"
+            android:hint="点击设置性别" />
     </LinearLayout>
      <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+         android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+         android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            
         >
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.example.birthdaytree.edittext.DefEdittext
+            android:id="@+id/GuestHobby"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hobby" />
-
-        <com.example.birthdaytree.LineEditText
-             android:id="@+id/GuestHobby"
-            style="?android:attr/textViewStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:ems="10" 
-            android:inputType="text"
             android:layout_marginLeft="10dp">
-        </com.example.birthdaytree.LineEditText>
-    </LinearLayout>
-	  <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_other" />
-
-        <com.example.birthdaytree.LineEditText
-            android:id="@+id/GuestOther"
-            style="?android:attr/textViewStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:ems="10" 
-            android:inputType="text"
-            android:layout_marginLeft="10dp">
-        </com.example.birthdaytree.LineEditText>
+        </com.example.birthdaytree.edittext.DefEdittext>
     </LinearLayout>
 </LinearLayout>

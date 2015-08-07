@@ -8,7 +8,429 @@
 package com.example.birthdaytree;
 
 public final class R {
+    public static final class anim {
+        public static final int dialog_main_hide_amination=0x7f040000;
+        public static final int dialog_main_show_amination=0x7f040001;
+        public static final int dialog_root_hide_amin=0x7f040002;
+        public static final int dialog_root_show_amin=0x7f040003;
+        public static final int progress_indeterminate_animation=0x7f040004;
+        public static final int push_up_in=0x7f040005;
+        public static final int push_up_out=0x7f040006;
+        public static final int slide_from_right_slow=0x7f040007;
+        public static final int slide_to_left_slow=0x7f040008;
+        public static final int snackbar_hide_animation=0x7f040009;
+        public static final int snackbar_show_animation=0x7f04000a;
+    }
     public static final class attr {
+        /**  in float button indicate if must start with animation 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int animate=0x7f01000d;
+        /**  in switche's view indicate state of view 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int check=0x7f010008;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int checkBoxSize=0x7f010009;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int checkedButton=0x7f01001e;
+        /**  if true, delays calls to OnClickListeners until ripple effect ends 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int clickAfterRipple=0x7f01000f;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int db_alpha=0x7f010018;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int db_bg_color=0x7f010010;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int db_contour_color=0x7f010015;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int db_contour_width=0x7f010017;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int db_draw_contour=0x7f010016;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int db_icon=0x7f010012;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int db_icon_color=0x7f010011;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int db_icon_padding=0x7f010014;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int db_is_center=0x7f010019;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int db_size=0x7f010013;
+        /**  @hide Whether the number picker supports fligning. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int flingable=0x7f010027;
+        /**  in float button indicate icon resource 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int iconDrawable=0x7f01000b;
+        /**  in button whitch contains drawable indicate icon resource 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int iconSize=0x7f01000c;
+        /**  in progress view indicate max value of progress 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int max=0x7f010003;
+        /**  in progress view indicate min value of progress 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int min=0x7f010004;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int numberPickerDownButtonStyle=0x7f010024;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int numberPickerInputTextStyle=0x7f010025;
+        /**  Don't touch this 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int numberPickerStyle=0x7f010022;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int numberPickerUpButtonStyle=0x7f010023;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int orientation=0x7f01001f;
+        /**  in progress view indicate value of progress 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int progress=0x7f010006;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int radioGroup_color=0x7f01001d;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int radio_checked_color=0x7f01001b;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int radio_color=0x7f01001a;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int radio_text=0x7f01001c;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int rightPadding=0x7f010021;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int right_width=0x7f010020;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ringWidth=0x7f010007;
+        /**  set the border of the ripple frame 
+         <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int rippleBorderRadius=0x7f01000e;
+        /**  Color of ripple animation 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int rippleColor=0x7f010000;
+        /**  Speed of ripple animation 
+         <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int rippleSpeed=0x7f010001;
+        /**  @hide The divider for making the selection area. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int selectionDivider=0x7f010028;
+        /**  @hide The height of the selection divider. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int selectionDividerHeight=0x7f010029;
+        /**  @hide The distance of the selection divider 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int selectionDividersDistance=0x7f01002a;
+        /**  indicate if the slider must show number indicator 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int showNumberIndicator=0x7f010002;
+        /**  @hide Color for the solid color background if such for optimized rendering. 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int solidColor=0x7f010026;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int thumbSize=0x7f01000a;
+        /**  in progress view indicate value of progress 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int value=0x7f010005;
+    }
+    public static final class color {
+        public static final int amethyst=0x7f060020;
+        public static final int android=0x7f060019;
+        public static final int behance=0x7f060018;
+        public static final int black=0x7f060003;
+        public static final int blur_bg=0x7f060024;
+        public static final int carrot=0x7f06001e;
+        public static final int dribble=0x7f06000d;
+        public static final int dropbox=0x7f060014;
+        public static final int evernote=0x7f060015;
+        public static final int facebook=0x7f060006;
+        public static final int foursquare=0x7f06001a;
+        public static final int github=0x7f060012;
+        public static final int googleplus=0x7f060009;
+        public static final int green=0x7f060000;
+        public static final int grey=0x7f060025;
+        public static final int instagram=0x7f060013;
+        public static final int lastfm=0x7f06000f;
+        public static final int linkedin=0x7f06000c;
+        public static final int paypal=0x7f060016;
+        public static final int pinterest=0x7f06000a;
+        public static final int pumpkin=0x7f06001f;
+        public static final int radio_checked_color=0x7f060023;
+        public static final int radio_color=0x7f060022;
+        public static final int rdio=0x7f060010;
+        public static final int right_bg=0x7f060027;
+        public static final int skype=0x7f060011;
+        public static final int soundcloud=0x7f060017;
+        public static final int spotify=0x7f060007;
+        public static final int stackoverflow=0x7f06001d;
+        public static final int stumbleupon=0x7f06000e;
+        public static final int sunflower=0x7f060021;
+        public static final int thumbColor=0x7f060001;
+        public static final int transparent=0x7f060026;
+        public static final int trello=0x7f06001b;
+        public static final int tumblr=0x7f06000b;
+        public static final int twitter_bg=0x7f060005;
+        /** 图标属性
+         */
+        public static final int twitter_blue=0x7f060004;
+        public static final int vimeo=0x7f060008;
+        public static final int white=0x7f060002;
+        public static final int youtube=0x7f06001c;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -17,104 +439,291 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f070006;
+        public static final int activity_vertical_margin=0x7f070007;
+        public static final int radio_border_radius=0x7f070002;
+        public static final int radio_height=0x7f070001;
+        public static final int radio_ripple_radius=0x7f070004;
+        public static final int radio_stroke_width=0x7f070005;
+        public static final int radio_thumb_radius=0x7f070003;
+        public static final int radio_width=0x7f070000;
     }
     public static final class drawable {
-        public static final int birthdaytree=0x7f020000;
-        public static final int birthdaytreethree=0x7f020001;
-        public static final int birthdaytreetwo=0x7f020002;
-        public static final int bothers=0x7f020003;
-        public static final int classmates=0x7f020004;
-        public static final int colleague=0x7f020005;
-        public static final int elders=0x7f020006;
-        public static final int friends=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int indicator=0x7f020009;
-        public static final int indicator_focused=0x7f02000a;
-        public static final int last=0x7f02000b;
-        public static final int lover=0x7f02000c;
-        public static final int next=0x7f02000d;
-        public static final int next1=0x7f02000e;
-        public static final int parents=0x7f02000f;
-        public static final int point_false=0x7f020010;
-        public static final int point_true=0x7f020011;
-        public static final int slpash_ui_01=0x7f020012;
-        public static final int slpash_ui_02=0x7f020013;
-        public static final int slpash_ui_03=0x7f020014;
-        public static final int slpash_ui_04=0x7f020015;
-        public static final int topbar=0x7f020016;
-        public static final int topbarleft=0x7f020017;
-        public static final int topbarright=0x7f020018;
+        public static final int aihao=0x7f020000;
+        public static final int background_button=0x7f020001;
+        public static final int background_button_float=0x7f020002;
+        public static final int background_button_rectangle=0x7f020003;
+        public static final int background_checkbox=0x7f020004;
+        public static final int background_checkbox_check=0x7f020005;
+        public static final int background_checkbox_uncheck=0x7f020006;
+        public static final int background_progress=0x7f020007;
+        public static final int background_switch_ball_uncheck=0x7f020008;
+        public static final int background_transparent=0x7f020009;
+        public static final int badge=0x7f02000a;
+        public static final int birthdaytree=0x7f02000b;
+        public static final int birthdaytreethree=0x7f02000c;
+        public static final int birthdaytreetwo=0x7f02000d;
+        public static final int bothers=0x7f02000e;
+        public static final int checkable_button=0x7f02000f;
+        public static final int checkable_default_border=0x7f020010;
+        public static final int checkable_selected_border=0x7f020011;
+        public static final int classmates=0x7f020012;
+        public static final int colleague=0x7f020013;
+        public static final int dangao=0x7f020014;
+        public static final int del_icon_normal=0x7f020015;
+        public static final int dialog_background=0x7f020016;
+        public static final int dialog_set_time_divider=0x7f020017;
+        public static final int edittext=0x7f020018;
+        public static final int elders=0x7f020019;
+        public static final int float_button1_shadowp=0x7f02001a;
+        public static final int float_button_shadow1=0x7f02001b;
+        public static final int friends=0x7f02001c;
+        public static final int head_image=0x7f02001d;
+        public static final int ic_launcher=0x7f02001e;
+        public static final int ic_reloj_max=0x7f02001f;
+        public static final int img_1=0x7f020020;
+        public static final int img_2=0x7f020021;
+        public static final int img_3=0x7f020022;
+        public static final int img_4=0x7f020023;
+        public static final int img_5=0x7f020024;
+        public static final int indicator=0x7f020025;
+        public static final int indicator_focused=0x7f020026;
+        public static final int last=0x7f020027;
+        public static final int lover=0x7f020028;
+        public static final int next=0x7f020029;
+        public static final int next1=0x7f02002a;
+        public static final int no_edittext=0x7f02002b;
+        public static final int np_numberpicker_down_btn_holo_dark=0x7f02002c;
+        public static final int np_numberpicker_down_btn_holo_light=0x7f02002d;
+        public static final int np_numberpicker_down_disabled_focused_holo_dark=0x7f02002e;
+        public static final int np_numberpicker_down_disabled_focused_holo_light=0x7f02002f;
+        public static final int np_numberpicker_down_disabled_holo_dark=0x7f020030;
+        public static final int np_numberpicker_down_disabled_holo_light=0x7f020031;
+        public static final int np_numberpicker_down_focused_holo_dark=0x7f020032;
+        public static final int np_numberpicker_down_focused_holo_light=0x7f020033;
+        public static final int np_numberpicker_down_longpressed_holo_dark=0x7f020034;
+        public static final int np_numberpicker_down_longpressed_holo_light=0x7f020035;
+        public static final int np_numberpicker_down_normal_holo_dark=0x7f020036;
+        public static final int np_numberpicker_down_normal_holo_light=0x7f020037;
+        public static final int np_numberpicker_down_pressed_holo_dark=0x7f020038;
+        public static final int np_numberpicker_down_pressed_holo_light=0x7f020039;
+        public static final int np_numberpicker_up_btn_holo_dark=0x7f02003a;
+        public static final int np_numberpicker_up_btn_holo_light=0x7f02003b;
+        public static final int np_numberpicker_up_disabled_focused_holo_dark=0x7f02003c;
+        public static final int np_numberpicker_up_disabled_focused_holo_light=0x7f02003d;
+        public static final int np_numberpicker_up_disabled_holo_dark=0x7f02003e;
+        public static final int np_numberpicker_up_disabled_holo_light=0x7f02003f;
+        public static final int np_numberpicker_up_focused_holo_dark=0x7f020040;
+        public static final int np_numberpicker_up_focused_holo_light=0x7f020041;
+        public static final int np_numberpicker_up_longpressed_holo_dark=0x7f020042;
+        public static final int np_numberpicker_up_longpressed_holo_light=0x7f020043;
+        public static final int np_numberpicker_up_normal_holo_dark=0x7f020044;
+        public static final int np_numberpicker_up_normal_holo_light=0x7f020045;
+        public static final int np_numberpicker_up_pressed_holo_dark=0x7f020046;
+        public static final int np_numberpicker_up_pressed_holo_light=0x7f020047;
+        public static final int parents=0x7f020048;
+        public static final int point_false=0x7f020049;
+        public static final int point_true=0x7f02004a;
+        public static final int qq=0x7f02004b;
+        public static final int select=0x7f02004c;
+        public static final int sex=0x7f02004d;
+        public static final int shadow_down=0x7f02004e;
+        public static final int shadow_right=0x7f02004f;
+        public static final int slider_background=0x7f020050;
+        public static final int slpash_ui_01=0x7f020051;
+        public static final int slpash_ui_02=0x7f020052;
+        public static final int slpash_ui_03=0x7f020053;
+        public static final int slpash_ui_04=0x7f020054;
+        public static final int sprite_check=0x7f020055;
+        public static final int test=0x7f020056;
+        public static final int topbar=0x7f020057;
+        public static final int topbarleft=0x7f020058;
+        public static final int topbarright=0x7f020059;
+        public static final int transparent=0x7f02005a;
+        public static final int username=0x7f02005b;
     }
     public static final class id {
-        public static final int GuestBirthday=0x7f080005;
-        public static final int GuestHeadImage=0x7f080002;
-        public static final int GuestHobby=0x7f080009;
-        public static final int GuestMan=0x7f080007;
-        public static final int GuestName=0x7f080003;
-        public static final int GuestOther=0x7f08000a;
-        public static final int GuestSex=0x7f080006;
-        public static final int GuestWoman=0x7f080008;
-        public static final int action_settings=0x7f080022;
-        public static final int apartDay=0x7f080011;
-        public static final int back=0x7f080000;
-        public static final int back_showbirthday=0x7f080021;
-        public static final int birthName=0x7f08000e;
-        public static final int birthday=0x7f08001b;
-        public static final int calendarFlag=0x7f08000f;
-        public static final int date=0x7f080010;
-        public static final int headImage=0x7f080020;
-        public static final int hobby=0x7f08001f;
-        public static final int id1=0x7f080004;
-        public static final int last=0x7f080019;
-        public static final int linearLayout1=0x7f080013;
-        public static final int listview=0x7f08000b;
-        public static final int man=0x7f08001d;
-        public static final int name=0x7f08001a;
-        public static final int next=0x7f080018;
-        public static final int point1=0x7f080014;
-        public static final int point2=0x7f080015;
-        public static final int point3=0x7f080016;
-        public static final int point4=0x7f080017;
-        public static final int portrait=0x7f08000d;
-        public static final int save=0x7f080001;
-        public static final int sex=0x7f08001c;
-        public static final int topBar=0x7f08000c;
-        public static final int viewpager=0x7f080012;
-        public static final int woman=0x7f08001e;
+        public static final int GuestBirthday=0x7f0a0008;
+        public static final int GuestHeadImage=0x7f0a0006;
+        public static final int GuestHobby=0x7f0a000a;
+        public static final int GuestName=0x7f0a0007;
+        public static final int GuestSex=0x7f0a0009;
+        public static final int about_me=0x7f0a0032;
+        public static final int apartDay=0x7f0a0041;
+        public static final int attr=0x7f0a0046;
+        public static final int back=0x7f0a0004;
+        public static final int back_showbirthday=0x7f0a005d;
+        public static final int birthName=0x7f0a003e;
+        public static final int birthday=0x7f0a0056;
+        public static final int blue=0x7f0a001a;
+        public static final int button_accept=0x7f0a0027;
+        public static final int button_cancel=0x7f0a0026;
+        public static final int buttonflat=0x7f0a004b;
+        public static final int calendarFlag=0x7f0a003f;
+        public static final int cancel=0x7f0a0002;
+        public static final int close_hobby_select=0x7f0a002a;
+        public static final int container=0x7f0a000b;
+        public static final int contentDialog=0x7f0a0021;
+        public static final int contentSelector=0x7f0a0016;
+        public static final int date=0x7f0a0040;
+        public static final int datePicker=0x7f0a0001;
+        public static final int date_day=0x7f0a001b;
+        public static final int date_month=0x7f0a001c;
+        public static final int date_year=0x7f0a001d;
+        public static final int datebefore0=0x7f0a0014;
+        public static final int datebefore1=0x7f0a000f;
+        public static final int datebefore3=0x7f0a0010;
+        public static final int datebefore5=0x7f0a0012;
+        public static final int datebefore7=0x7f0a0013;
+        public static final int decrement=0x7f0a0039;
+        public static final int def_edittext=0x7f0a001f;
+        public static final int dialog_rootView=0x7f0a0020;
+        public static final int edit=0x7f0a0044;
+        public static final int green=0x7f0a0019;
+        public static final int headImage=0x7f0a005c;
+        public static final int hobby=0x7f0a005a;
+        public static final int hobby_hint=0x7f0a005b;
+        public static final int hobby_icon=0x7f0a0048;
+        public static final int hobby_select_flowlayout=0x7f0a0029;
+        public static final int id1=0x7f0a0045;
+        public static final int id_img1=0x7f0a002d;
+        public static final int id_img2=0x7f0a002f;
+        public static final int id_img3=0x7f0a0031;
+        public static final int id_img4=0x7f0a0033;
+        public static final int id_img5=0x7f0a0035;
+        public static final int id_menu=0x7f0a0049;
+        public static final int increment=0x7f0a0037;
+        public static final int info=0x7f0a0047;
+        public static final int item_right=0x7f0a0042;
+        public static final int item_right_txt=0x7f0a0043;
+        public static final int l1=0x7f0a000e;
+        public static final int l2=0x7f0a0011;
+        public static final int last=0x7f0a0054;
+        public static final int layout_button=0x7f0a0025;
+        public static final int left_image=0x7f0a001e;
+        public static final int linearLayout1=0x7f0a004e;
+        public static final int listview=0x7f0a003b;
+        public static final int man=0x7f0a0058;
+        public static final int message=0x7f0a0024;
+        public static final int message_content_view=0x7f0a0023;
+        public static final int message_scrollView=0x7f0a0022;
+        public static final int name=0x7f0a0055;
+        public static final int next=0x7f0a0053;
+        public static final int number_indicator_spinner_content=0x7f0a0036;
+        public static final int numberpicker_input=0x7f0a0038;
+        public static final int point1=0x7f0a004f;
+        public static final int point2=0x7f0a0050;
+        public static final int point3=0x7f0a0051;
+        public static final int point4=0x7f0a0052;
+        public static final int portrait=0x7f0a003d;
+        public static final int progressBarCircularIndetermininate=0x7f0a003a;
+        public static final int red=0x7f0a0018;
+        public static final int remindText=0x7f0a000d;
+        public static final int rootSelector=0x7f0a0015;
+        public static final int save=0x7f0a0005;
+        public static final int send_myself=0x7f0a002e;
+        public static final int setting=0x7f0a0030;
+        public static final int sex=0x7f0a0057;
+        public static final int shape_bacground=0x7f0a005e;
+        public static final int show_myself=0x7f0a002c;
+        public static final int snackbar=0x7f0a004a;
+        public static final int sure=0x7f0a0003;
+        public static final int sure_hobby_select=0x7f0a002b;
+        public static final int sure_l=0x7f0a0028;
+        public static final int tel_me=0x7f0a0034;
+        public static final int text=0x7f0a004c;
+        public static final int title=0x7f0a0000;
+        public static final int topBar=0x7f0a003c;
+        public static final int viewColor=0x7f0a0017;
+        public static final int view_icon=0x7f0a000c;
+        public static final int viewpager=0x7f0a004d;
+        public static final int woman=0x7f0a0059;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int addpersonbirthday=0x7f030001;
-        public static final int dialog=0x7f030002;
-        public static final int show_birthday_listview_frame=0x7f030003;
-        public static final int show_bithday_listview=0x7f030004;
-        public static final int splash_main=0x7f030005;
-        public static final int splashguide1=0x7f030006;
-        public static final int splashguide2=0x7f030007;
-        public static final int splashguide3=0x7f030008;
-        public static final int splashguide4=0x7f030009;
-        public static final int topbar=0x7f03000a;
+        public static final int activity_light=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int add_button=0x7f030002;
+        public static final int addpersonbirthday=0x7f030003;
+        public static final int badge=0x7f030004;
+        public static final int birthday_remind_dialog=0x7f030005;
+        public static final int checkable_button=0x7f030006;
+        public static final int choose_remind_date_dialog=0x7f030007;
+        public static final int color_selector=0x7f030008;
+        public static final int common_dialog=0x7f030009;
+        public static final int date_picker=0x7f03000a;
+        public static final int def_edittext=0x7f03000b;
+        public static final int dialog=0x7f03000c;
+        public static final int hobby_select=0x7f03000d;
+        public static final int left_menu=0x7f03000e;
+        public static final int number_indicator_spinner=0x7f03000f;
+        public static final int number_picker=0x7f030010;
+        public static final int premade_badge=0x7f030011;
+        public static final int progress_dialog=0x7f030012;
+        public static final int show_birthday_listview_frame=0x7f030013;
+        public static final int show_bithday_listview=0x7f030014;
+        public static final int show_person_birthday_detail=0x7f030015;
+        public static final int show_person_bithday_detail_listview2=0x7f030016;
+        public static final int simple_list_item=0x7f030017;
+        public static final int slidingmenu_main=0x7f030018;
+        public static final int snackbar=0x7f030019;
+        public static final int splash_main=0x7f03001a;
+        public static final int splashguide1=0x7f03001b;
+        public static final int splashguide2=0x7f03001c;
+        public static final int splashguide3=0x7f03001d;
+        public static final int splashguide4=0x7f03001e;
+        public static final int topbar=0x7f03001f;
     }
-    public static final class menu {
-        public static final int main=0x7f070000;
+    public static final class raw {
+        public static final int entypo=0x7f050000;
+        public static final int entypo_social=0x7f050001;
+        public static final int fontawesome_webfont=0x7f050002;
+        public static final int google_material_design=0x7f050003;
+        public static final int iconic=0x7f050004;
+        public static final int meteocons=0x7f050005;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int add_other=0x7f050007;
-        public static final int app_name=0x7f050000;
-        public static final int birthday=0x7f050004;
-        public static final int birthdaying_name=0x7f05000b;
-        public static final int count_person=0x7f05000a;
-        public static final int hello_world=0x7f050002;
-        public static final int hobby=0x7f050006;
-        public static final int man=0x7f050008;
-        public static final int name=0x7f050003;
-        public static final int sex=0x7f050005;
-        public static final int woman=0x7f050009;
+        public static final int action_settings=0x7f080005;
+        public static final int add_other=0x7f08000c;
+        public static final int app_name=0x7f080004;
+        public static final int birthday=0x7f080008;
+        public static final int birthdaying_name=0x7f080010;
+        public static final int count_person=0x7f08000f;
+        public static final int hello_world=0x7f080006;
+        public static final int hobby=0x7f08000b;
+        public static final int man=0x7f08000d;
+        public static final int name=0x7f080007;
+        public static final int now_day=0x7f080011;
+        public static final int now_day_before_one=0x7f080012;
+        public static final int now_day_before_seven=0x7f080014;
+        public static final int now_day_before_three=0x7f080013;
+        public static final int now_day_no=0x7f080015;
+        public static final int np_number_picker_decrement_button=0x7f080003;
+        public static final int np_number_picker_increment_button=0x7f080002;
+        public static final int np_number_picker_increment_scroll_action=0x7f080001;
+        public static final int np_number_picker_increment_scroll_mode=0x7f080000;
+        public static final int set_birthday=0x7f080009;
+        public static final int sex=0x7f08000a;
+        public static final int woman=0x7f08000e;
     }
     public static final class style {
+        public static final int AiTheme=0x7f09000f;
+        public static final int AiTheme_Light=0x7f090010;
+        public static final int AiTheme_black=0x7f090011;
+        /**  Example Theme 
+         */
+        public static final int AiThemeSample=0x7f090000;
+        public static final int AiThemeSample_Light=0x7f090001;
+        public static final int AiWidget=0x7f090002;
+        public static final int AiWidget_EditText=0x7f090009;
+        public static final int AiWidget_EditText_NumberPickerInputText=0x7f090008;
+        public static final int AiWidget_EditText_NumberPickerInputText_Light=0x7f090005;
+        public static final int AiWidget_ImageButton=0x7f09000c;
+        public static final int AiWidget_ImageButton_NumberPickerDownButton=0x7f09000b;
+        public static final int AiWidget_ImageButton_NumberPickerDownButton_Light=0x7f090007;
+        public static final int AiWidget_ImageButton_NumberPickerUpButton=0x7f09000a;
+        public static final int AiWidget_ImageButton_NumberPickerUpButton_Light=0x7f090006;
+        public static final int AiWidget_Light_NumberPicker=0x7f090004;
+        public static final int AiWidget_NumberPicker=0x7f090003;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -136,10 +745,832 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f09000d;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f09000e;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a CustomAttributes.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CustomAttributes_animate com.example.birthdaytree:animate}</code></td><td> in float button indicate if must start with animation </td></tr>
+           <tr><td><code>{@link #CustomAttributes_check com.example.birthdaytree:check}</code></td><td> in switche's view indicate state of view </td></tr>
+           <tr><td><code>{@link #CustomAttributes_checkBoxSize com.example.birthdaytree:checkBoxSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_clickAfterRipple com.example.birthdaytree:clickAfterRipple}</code></td><td> if true, delays calls to OnClickListeners until ripple effect ends </td></tr>
+           <tr><td><code>{@link #CustomAttributes_db_alpha com.example.birthdaytree:db_alpha}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_db_bg_color com.example.birthdaytree:db_bg_color}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_db_contour_color com.example.birthdaytree:db_contour_color}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_db_contour_width com.example.birthdaytree:db_contour_width}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_db_draw_contour com.example.birthdaytree:db_draw_contour}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_db_icon com.example.birthdaytree:db_icon}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_db_icon_color com.example.birthdaytree:db_icon_color}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_db_icon_padding com.example.birthdaytree:db_icon_padding}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_db_is_center com.example.birthdaytree:db_is_center}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_db_size com.example.birthdaytree:db_size}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_iconDrawable com.example.birthdaytree:iconDrawable}</code></td><td> in float button indicate icon resource </td></tr>
+           <tr><td><code>{@link #CustomAttributes_iconSize com.example.birthdaytree:iconSize}</code></td><td> in button whitch contains drawable indicate icon resource </td></tr>
+           <tr><td><code>{@link #CustomAttributes_max com.example.birthdaytree:max}</code></td><td> in progress view indicate max value of progress </td></tr>
+           <tr><td><code>{@link #CustomAttributes_min com.example.birthdaytree:min}</code></td><td> in progress view indicate min value of progress </td></tr>
+           <tr><td><code>{@link #CustomAttributes_progress com.example.birthdaytree:progress}</code></td><td> in progress view indicate value of progress </td></tr>
+           <tr><td><code>{@link #CustomAttributes_ringWidth com.example.birthdaytree:ringWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_rippleBorderRadius com.example.birthdaytree:rippleBorderRadius}</code></td><td> set the border of the ripple frame </td></tr>
+           <tr><td><code>{@link #CustomAttributes_rippleColor com.example.birthdaytree:rippleColor}</code></td><td> Color of ripple animation </td></tr>
+           <tr><td><code>{@link #CustomAttributes_rippleSpeed com.example.birthdaytree:rippleSpeed}</code></td><td> Speed of ripple animation </td></tr>
+           <tr><td><code>{@link #CustomAttributes_showNumberIndicator com.example.birthdaytree:showNumberIndicator}</code></td><td> indicate if the slider must show number indicator </td></tr>
+           <tr><td><code>{@link #CustomAttributes_thumbSize com.example.birthdaytree:thumbSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_value com.example.birthdaytree:value}</code></td><td> in progress view indicate value of progress </td></tr>
+           </table>
+           @see #CustomAttributes_animate
+           @see #CustomAttributes_check
+           @see #CustomAttributes_checkBoxSize
+           @see #CustomAttributes_clickAfterRipple
+           @see #CustomAttributes_db_alpha
+           @see #CustomAttributes_db_bg_color
+           @see #CustomAttributes_db_contour_color
+           @see #CustomAttributes_db_contour_width
+           @see #CustomAttributes_db_draw_contour
+           @see #CustomAttributes_db_icon
+           @see #CustomAttributes_db_icon_color
+           @see #CustomAttributes_db_icon_padding
+           @see #CustomAttributes_db_is_center
+           @see #CustomAttributes_db_size
+           @see #CustomAttributes_iconDrawable
+           @see #CustomAttributes_iconSize
+           @see #CustomAttributes_max
+           @see #CustomAttributes_min
+           @see #CustomAttributes_progress
+           @see #CustomAttributes_ringWidth
+           @see #CustomAttributes_rippleBorderRadius
+           @see #CustomAttributes_rippleColor
+           @see #CustomAttributes_rippleSpeed
+           @see #CustomAttributes_showNumberIndicator
+           @see #CustomAttributes_thumbSize
+           @see #CustomAttributes_value
+         */
+        public static final int[] CustomAttributes = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007,
+            0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b,
+            0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f,
+            0x7f010010, 0x7f010011, 0x7f010012, 0x7f010013,
+            0x7f010014, 0x7f010015, 0x7f010016, 0x7f010017,
+            0x7f010018, 0x7f010019
+        };
+        /**
+          <p>
+          @attr description
+           in float button indicate if must start with animation 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:animate
+        */
+        public static final int CustomAttributes_animate = 13;
+        /**
+          <p>
+          @attr description
+           in switche's view indicate state of view 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:check
+        */
+        public static final int CustomAttributes_check = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#checkBoxSize}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:checkBoxSize
+        */
+        public static final int CustomAttributes_checkBoxSize = 9;
+        /**
+          <p>
+          @attr description
+           if true, delays calls to OnClickListeners until ripple effect ends 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:clickAfterRipple
+        */
+        public static final int CustomAttributes_clickAfterRipple = 15;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#db_alpha}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:db_alpha
+        */
+        public static final int CustomAttributes_db_alpha = 24;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#db_bg_color}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:db_bg_color
+        */
+        public static final int CustomAttributes_db_bg_color = 16;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#db_contour_color}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:db_contour_color
+        */
+        public static final int CustomAttributes_db_contour_color = 21;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#db_contour_width}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:db_contour_width
+        */
+        public static final int CustomAttributes_db_contour_width = 23;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#db_draw_contour}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:db_draw_contour
+        */
+        public static final int CustomAttributes_db_draw_contour = 22;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#db_icon}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:db_icon
+        */
+        public static final int CustomAttributes_db_icon = 18;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#db_icon_color}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:db_icon_color
+        */
+        public static final int CustomAttributes_db_icon_color = 17;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#db_icon_padding}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:db_icon_padding
+        */
+        public static final int CustomAttributes_db_icon_padding = 20;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#db_is_center}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:db_is_center
+        */
+        public static final int CustomAttributes_db_is_center = 25;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#db_size}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:db_size
+        */
+        public static final int CustomAttributes_db_size = 19;
+        /**
+          <p>
+          @attr description
+           in float button indicate icon resource 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:iconDrawable
+        */
+        public static final int CustomAttributes_iconDrawable = 11;
+        /**
+          <p>
+          @attr description
+           in button whitch contains drawable indicate icon resource 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:iconSize
+        */
+        public static final int CustomAttributes_iconSize = 12;
+        /**
+          <p>
+          @attr description
+           in progress view indicate max value of progress 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:max
+        */
+        public static final int CustomAttributes_max = 3;
+        /**
+          <p>
+          @attr description
+           in progress view indicate min value of progress 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:min
+        */
+        public static final int CustomAttributes_min = 4;
+        /**
+          <p>
+          @attr description
+           in progress view indicate value of progress 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:progress
+        */
+        public static final int CustomAttributes_progress = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#ringWidth}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:ringWidth
+        */
+        public static final int CustomAttributes_ringWidth = 7;
+        /**
+          <p>
+          @attr description
+           set the border of the ripple frame 
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:rippleBorderRadius
+        */
+        public static final int CustomAttributes_rippleBorderRadius = 14;
+        /**
+          <p>
+          @attr description
+           Color of ripple animation 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:rippleColor
+        */
+        public static final int CustomAttributes_rippleColor = 0;
+        /**
+          <p>
+          @attr description
+           Speed of ripple animation 
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:rippleSpeed
+        */
+        public static final int CustomAttributes_rippleSpeed = 1;
+        /**
+          <p>
+          @attr description
+           indicate if the slider must show number indicator 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:showNumberIndicator
+        */
+        public static final int CustomAttributes_showNumberIndicator = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#thumbSize}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:thumbSize
+        */
+        public static final int CustomAttributes_thumbSize = 10;
+        /**
+          <p>
+          @attr description
+           in progress view indicate value of progress 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:value
+        */
+        public static final int CustomAttributes_value = 5;
+        /**   <attr name="" format=""></attr> 
+         */
+        public static final int[] Edittext = {
+            
+        };
+        /** Attributes that can be used with a NumberPicker.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #NumberPicker_android_fadingEdgeLength android:fadingEdgeLength}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_android_maxHeight android:maxHeight}</code></td><td> @hide The max height of the NumberPicker.</td></tr>
+           <tr><td><code>{@link #NumberPicker_android_maxWidth android:maxWidth}</code></td><td> @hide The max width of the NumberPicker.</td></tr>
+           <tr><td><code>{@link #NumberPicker_android_minHeight android:minHeight}</code></td><td> @hide The min height of the NumberPicker.</td></tr>
+           <tr><td><code>{@link #NumberPicker_android_minWidth android:minWidth}</code></td><td> @hide The min width of the NumberPicker.</td></tr>
+           <tr><td><code>{@link #NumberPicker_android_orientation android:orientation}</code></td><td> We need some extra attributes </td></tr>
+           <tr><td><code>{@link #NumberPicker_flingable com.example.birthdaytree:flingable}</code></td><td> @hide Whether the number picker supports fligning.</td></tr>
+           <tr><td><code>{@link #NumberPicker_selectionDivider com.example.birthdaytree:selectionDivider}</code></td><td> @hide The divider for making the selection area.</td></tr>
+           <tr><td><code>{@link #NumberPicker_selectionDividerHeight com.example.birthdaytree:selectionDividerHeight}</code></td><td> @hide The height of the selection divider.</td></tr>
+           <tr><td><code>{@link #NumberPicker_selectionDividersDistance com.example.birthdaytree:selectionDividersDistance}</code></td><td> @hide The distance of the selection divider </td></tr>
+           <tr><td><code>{@link #NumberPicker_solidColor com.example.birthdaytree:solidColor}</code></td><td> @hide Color for the solid color background if such for optimized rendering.</td></tr>
+           </table>
+           @see #NumberPicker_android_fadingEdgeLength
+           @see #NumberPicker_android_maxHeight
+           @see #NumberPicker_android_maxWidth
+           @see #NumberPicker_android_minHeight
+           @see #NumberPicker_android_minWidth
+           @see #NumberPicker_android_orientation
+           @see #NumberPicker_flingable
+           @see #NumberPicker_selectionDivider
+           @see #NumberPicker_selectionDividerHeight
+           @see #NumberPicker_selectionDividersDistance
+           @see #NumberPicker_solidColor
+         */
+        public static final int[] NumberPicker = {
+            0x010100c4, 0x010100e0, 0x0101011f, 0x01010120,
+            0x0101013f, 0x01010140, 0x7f010026, 0x7f010027,
+            0x7f010028, 0x7f010029, 0x7f01002a
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fadingEdgeLength}
+          attribute's value can be found in the {@link #NumberPicker} array.
+          @attr name android:fadingEdgeLength
+        */
+        public static final int NumberPicker_android_fadingEdgeLength = 1;
+        /**
+          <p>
+          @attr description
+           @hide The max height of the NumberPicker. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#maxHeight}.
+          @attr name android:maxHeight
+        */
+        public static final int NumberPicker_android_maxHeight = 3;
+        /**
+          <p>
+          @attr description
+           @hide The max width of the NumberPicker. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#maxWidth}.
+          @attr name android:maxWidth
+        */
+        public static final int NumberPicker_android_maxWidth = 2;
+        /**
+          <p>
+          @attr description
+           @hide The min height of the NumberPicker. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#minHeight}.
+          @attr name android:minHeight
+        */
+        public static final int NumberPicker_android_minHeight = 5;
+        /**
+          <p>
+          @attr description
+           @hide The min width of the NumberPicker. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#minWidth}.
+          @attr name android:minWidth
+        */
+        public static final int NumberPicker_android_minWidth = 4;
+        /**
+          <p>
+          @attr description
+           We need some extra attributes 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#orientation}.
+          @attr name android:orientation
+        */
+        public static final int NumberPicker_android_orientation = 0;
+        /**
+          <p>
+          @attr description
+           @hide Whether the number picker supports fligning. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:flingable
+        */
+        public static final int NumberPicker_flingable = 7;
+        /**
+          <p>
+          @attr description
+           @hide The divider for making the selection area. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:selectionDivider
+        */
+        public static final int NumberPicker_selectionDivider = 8;
+        /**
+          <p>
+          @attr description
+           @hide The height of the selection divider. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:selectionDividerHeight
+        */
+        public static final int NumberPicker_selectionDividerHeight = 9;
+        /**
+          <p>
+          @attr description
+           @hide The distance of the selection divider 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:selectionDividersDistance
+        */
+        public static final int NumberPicker_selectionDividersDistance = 10;
+        /**
+          <p>
+          @attr description
+           @hide Color for the solid color background if such for optimized rendering. 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name com.example.birthdaytree:solidColor
+        */
+        public static final int NumberPicker_solidColor = 6;
+        /** Attributes that can be used with a RadioButton.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #RadioButton_radio_checked_color com.example.birthdaytree:radio_checked_color}</code></td><td></td></tr>
+           <tr><td><code>{@link #RadioButton_radio_color com.example.birthdaytree:radio_color}</code></td><td></td></tr>
+           <tr><td><code>{@link #RadioButton_radio_text com.example.birthdaytree:radio_text}</code></td><td></td></tr>
+           </table>
+           @see #RadioButton_radio_checked_color
+           @see #RadioButton_radio_color
+           @see #RadioButton_radio_text
+         */
+        public static final int[] RadioButton = {
+            0x7f01001a, 0x7f01001b, 0x7f01001c
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#radio_checked_color}
+          attribute's value can be found in the {@link #RadioButton} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:radio_checked_color
+        */
+        public static final int RadioButton_radio_checked_color = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#radio_color}
+          attribute's value can be found in the {@link #RadioButton} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:radio_color
+        */
+        public static final int RadioButton_radio_color = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#radio_text}
+          attribute's value can be found in the {@link #RadioButton} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:radio_text
+        */
+        public static final int RadioButton_radio_text = 2;
+        /** Attributes that can be used with a RadioGroup.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #RadioGroup_checkedButton com.example.birthdaytree:checkedButton}</code></td><td></td></tr>
+           <tr><td><code>{@link #RadioGroup_orientation com.example.birthdaytree:orientation}</code></td><td></td></tr>
+           <tr><td><code>{@link #RadioGroup_radioGroup_color com.example.birthdaytree:radioGroup_color}</code></td><td></td></tr>
+           </table>
+           @see #RadioGroup_checkedButton
+           @see #RadioGroup_orientation
+           @see #RadioGroup_radioGroup_color
+         */
+        public static final int[] RadioGroup = {
+            0x7f01001d, 0x7f01001e, 0x7f01001f
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#checkedButton}
+          attribute's value can be found in the {@link #RadioGroup} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:checkedButton
+        */
+        public static final int RadioGroup_checkedButton = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#orientation}
+          attribute's value can be found in the {@link #RadioGroup} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:orientation
+        */
+        public static final int RadioGroup_orientation = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#radioGroup_color}
+          attribute's value can be found in the {@link #RadioGroup} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:radioGroup_color
+        */
+        public static final int RadioGroup_radioGroup_color = 0;
+        /** Attributes that can be used with a SlidingMenu.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SlidingMenu_rightPadding com.example.birthdaytree:rightPadding}</code></td><td></td></tr>
+           </table>
+           @see #SlidingMenu_rightPadding
+         */
+        public static final int[] SlidingMenu = {
+            0x7f010021
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#rightPadding}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:rightPadding
+        */
+        public static final int SlidingMenu_rightPadding = 0;
+        /** Attributes that can be used with a swipelistviewstyle.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #swipelistviewstyle_right_width com.example.birthdaytree:right_width}</code></td><td></td></tr>
+           </table>
+           @see #swipelistviewstyle_right_width
+         */
+        public static final int[] swipelistviewstyle = {
+            0x7f010020
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.birthdaytree.R.attr#right_width}
+          attribute's value can be found in the {@link #swipelistviewstyle} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.birthdaytree:right_width
+        */
+        public static final int swipelistviewstyle_right_width = 0;
+    };
 }
